@@ -4,271 +4,393 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ankit Katiyar — CV · Applied AI Engineer</title>
-  <meta name="description" content="Curriculum Vitae of Ankit Katiyar — Applied AI Engineer at Vaisala." />
+  <meta name="description" content="Curriculum Vitae of Ankit Katiyar — Applied AI Engineer building autonomous software factories." />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23d97757'/%3E%3Cstop offset='0.5' stop-color='%237c5cff'/%3E%3Cstop offset='1' stop-color='%236e9fff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='24' fill='%23070912'/%3E%3Ctext x='50' y='68' font-family='Arial' font-size='52' font-weight='700' text-anchor='middle' fill='url(%23g)'%3EAK%3C/text%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;450;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <style>
-    :root { --accent: #d97757; --accent-2: #5566d6; --accent-3: #7c5cff; --ink: #1c2230; --muted: #5b6577; --line: #e6e9f0; --paper: #ffffff; }
+    :root {
+      --bg: #070912; --text: #eef1f8; --muted: #9aa3ba;
+      --accent: #d97757; --accent-2: #6e9fff; --accent-3: #9a7cff; --live: #34d399;
+      --glass: rgba(255,255,255,0.055); --glass-border: rgba(255,255,255,0.12); --glass-hi: rgba(255,255,255,0.22);
+      --radius: 20px; --max: 980px;
+    }
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Inter', system-ui, sans-serif; background: #070912; color: var(--ink); line-height: 1.55; -webkit-font-smoothing: antialiased; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.55; -webkit-font-smoothing: antialiased; }
     a { color: inherit; text-decoration: none; }
+    ::selection { background: var(--accent-3); color: #fff; }
 
-    /* aurora bg (screen only) */
-    .aurora { position: fixed; inset: 0; z-index: 0; overflow: hidden; }
+    .aurora { position: fixed; inset: 0; z-index: -2; overflow: hidden; }
     .blob { position: absolute; border-radius: 50%; filter: blur(90px); opacity: 0.5; }
-    .b1 { width: 45vw; height: 45vw; background: #7c5cff; top: -10%; left: -8%; }
+    .b1 { width: 46vw; height: 46vw; background: #7c5cff; top: -10%; left: -8%; }
     .b2 { width: 40vw; height: 40vw; background: #6e9fff; top: 5%; right: -10%; }
     .b3 { width: 42vw; height: 42vw; background: #d97757; bottom: -16%; left: 20%; opacity: 0.4; }
+    .veil { position: fixed; inset: 0; z-index: -1; background: radial-gradient(120% 80% at 50% 0%, rgba(7,9,18,0.2), rgba(7,9,18,0.82) 70%), linear-gradient(180deg, rgba(7,9,18,0.4), rgba(7,9,18,0.72)); }
 
-    /* floating controls */
+    .glass { background: var(--glass); backdrop-filter: blur(22px) saturate(170%); -webkit-backdrop-filter: blur(22px) saturate(170%); border: 1px solid var(--glass-border); box-shadow: inset 0 1px 0 var(--glass-hi), 0 16px 44px rgba(0,0,0,0.4); border-radius: var(--radius); }
+
     .controls { position: fixed; top: 18px; right: 18px; z-index: 100; display: flex; gap: 10px; align-items: center; }
     .ctl { display: inline-flex; align-items: center; gap: 8px; padding: 9px 15px; border-radius: 12px; font-size: 0.85rem; font-weight: 600; cursor: pointer; color: #fff; background: rgba(255,255,255,0.08); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.16); box-shadow: inset 0 1px 0 rgba(255,255,255,0.22); transition: transform 0.15s, border-color 0.2s; }
     .ctl:hover { transform: translateY(-2px); border-color: rgba(255,255,255,0.35); }
     .ctl.primary { background: linear-gradient(110deg, var(--accent), var(--accent-3)); border: none; }
     .lang-toggle { display: inline-flex; padding: 3px; border-radius: 999px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.16); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
-    .lang-toggle button { font-family: 'Inter'; font-size: 0.78rem; font-weight: 600; color: rgba(255,255,255,0.7); background: none; border: none; cursor: pointer; padding: 6px 12px; border-radius: 999px; }
+    .lang-toggle button { font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; font-weight: 500; color: rgba(255,255,255,0.7); background: none; border: none; cursor: pointer; padding: 6px 12px; border-radius: 999px; }
     .lang-toggle button.active { color: #fff; background: linear-gradient(110deg, var(--accent), var(--accent-3)); }
 
-    /* paper */
-    .paper { position: relative; z-index: 2; max-width: 880px; margin: 70px auto; background: var(--paper); border-radius: 14px; box-shadow: 0 30px 80px rgba(0,0,0,0.55); overflow: hidden; }
-    .head { padding: 40px 48px 30px; background: linear-gradient(135deg, #0f1424, #1a1f38); color: #fff; position: relative; }
-    .head::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 4px; background: linear-gradient(90deg, var(--accent), var(--accent-3), var(--accent-2)); }
-    .head h1 { font-family: 'Space Grotesk'; font-weight: 700; font-size: 2.3rem; letter-spacing: -0.02em; }
-    .head .role { color: #c9b8ff; font-weight: 600; font-size: 1.05rem; margin-top: 2px; }
-    .contact { margin-top: 16px; display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: 0.84rem; color: #c7cde0; }
-    .contact a, .contact span { display: inline-flex; align-items: center; gap: 6px; }
-    .contact a:hover { color: #fff; }
+    .doc { max-width: var(--max); margin: 64px auto; padding: 0 22px; }
 
-    .body { padding: 34px 48px 46px; }
-    .sec { margin-bottom: 26px; }
-    .sec:last-child { margin-bottom: 0; }
-    .sec h2 { font-family: 'Space Grotesk'; font-size: 0.95rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent-2); padding-bottom: 7px; border-bottom: 2px solid var(--line); margin-bottom: 14px; }
-    .summary { font-size: 0.96rem; color: #2c3344; }
+    /* model-card header */
+    .mc { padding: 30px 34px; margin-bottom: 16px; }
+    .mc-top { display: flex; gap: 22px; align-items: center; flex-wrap: wrap; }
+    .mc-av { width: 84px; height: 84px; border-radius: 22px; flex-shrink: 0; background: linear-gradient(135deg, var(--accent), var(--accent-3)); display: grid; place-items: center; font-family: 'Space Grotesk'; font-weight: 700; font-size: 2rem; color: #fff; box-shadow: 0 10px 28px rgba(124,92,255,0.45); }
+    .mc-id { flex: 1; min-width: 220px; }
+    .mc-id h1 { font-family: 'Space Grotesk'; font-weight: 700; font-size: clamp(1.9rem, 5vw, 2.7rem); letter-spacing: -0.03em; }
+    .mc-id .role { font-weight: 600; font-size: 1.05rem; background: linear-gradient(110deg, var(--accent), var(--accent-3) 60%, var(--accent-2)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    .mc-id .tagline { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: var(--muted); margin-top: 6px; }
+    .mc-status { display: inline-flex; align-items: center; gap: 8px; font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; color: var(--live); padding: 7px 13px; border-radius: 999px; background: rgba(52,211,153,0.1); border: 1px solid rgba(52,211,153,0.3); }
+    .livedot { width: 8px; height: 8px; border-radius: 50%; background: var(--live); box-shadow: 0 0 10px 1px var(--live); animation: pulse 1.6s infinite; }
+    @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+    .contact { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 9px; }
+    .cchip { display: inline-flex; align-items: center; gap: 7px; font-size: 0.82rem; color: #d3d8e6; padding: 7px 13px; border-radius: 10px; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); }
+    .cchip:hover { border-color: var(--accent-2); }
 
-    .skillrow { display: grid; grid-template-columns: 200px 1fr; gap: 6px 18px; padding: 5px 0; font-size: 0.9rem; align-items: baseline; }
-    .skillrow .k { font-weight: 600; color: var(--ink); }
-    .skillrow .v { color: var(--muted); }
-    .skillrow.hl .k { color: var(--accent); }
-    @media (max-width: 620px) { .skillrow { grid-template-columns: 1fr; gap: 2px; } }
+    /* metrics */
+    .metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 16px; }
+    @media (max-width: 620px) { .metrics { grid-template-columns: repeat(2, 1fr); } }
+    .metric { padding: 18px 14px; text-align: center; }
+    .metric .n { font-family: 'Space Grotesk'; font-weight: 700; font-size: 1.7rem; line-height: 1; background: linear-gradient(110deg, var(--accent-2), var(--accent-3)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    .metric .l { font-size: 0.74rem; color: var(--muted); margin-top: 7px; }
 
-    .job { margin-bottom: 18px; }
-    .job:last-child { margin-bottom: 0; }
+    .panel { padding: 26px 30px; margin-bottom: 16px; }
+    .sec-h { font-family: 'JetBrains Mono', monospace; font-size: 0.95rem; font-weight: 500; color: var(--accent-2); margin-bottom: 16px; }
+    .sec-h::before { content: "> "; color: var(--accent); }
+    .summary { font-size: 0.96rem; color: #cdd3e2; }
+    .summary strong { color: var(--text); }
+
+    /* career evolution pipeline */
+    .evo-track { position: relative; height: 6px; border-radius: 6px; background: rgba(255,255,255,0.06); margin: 4px 4px 22px; overflow: hidden; }
+    .evo-track i { position: absolute; left: 0; top: 0; bottom: 0; width: 100%; background: linear-gradient(90deg, rgba(110,159,255,0.25), var(--accent-3), var(--accent)); }
+    .evo { display: flex; align-items: stretch; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+    .enode { flex: 1; min-width: 130px; padding: 15px 13px; border-radius: 14px; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); }
+    .enode .ver { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; color: var(--accent-2); }
+    .enode .yr { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--muted); margin-top: 2px; }
+    .enode .rl { font-family: 'Space Grotesk'; font-weight: 600; font-size: 0.86rem; margin-top: 7px; line-height: 1.25; }
+    .enode .cm { font-size: 0.72rem; color: var(--muted); margin-top: 3px; }
+    .enode.now { border-color: var(--accent); background: linear-gradient(160deg, rgba(217,119,87,0.18), rgba(124,92,255,0.12)); }
+    .enode .nowtag { display: inline-flex; align-items: center; gap: 5px; font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; color: var(--live); margin-top: 8px; }
+
+    /* experience */
+    .job { padding-bottom: 16px; margin-bottom: 16px; border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .job:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
     .job-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
-    .job-head .t { font-family: 'Space Grotesk'; font-weight: 600; font-size: 1.02rem; color: var(--ink); }
-    .job-head .when { font-size: 0.8rem; color: var(--muted); font-weight: 500; white-space: nowrap; }
-    .job .co { font-size: 0.88rem; color: var(--accent-2); font-weight: 600; margin-bottom: 7px; }
+    .job-head .t { font-family: 'Space Grotesk'; font-weight: 600; font-size: 1.02rem; }
+    .job-head .when { font-family: 'JetBrains Mono', monospace; font-size: 0.76rem; color: var(--muted); white-space: nowrap; }
+    .job .co { font-size: 0.85rem; color: var(--accent-2); font-weight: 600; margin: 3px 0 9px; }
     .job ul { list-style: none; }
-    .job li { position: relative; padding-left: 18px; margin-bottom: 5px; font-size: 0.89rem; color: #38404f; }
-    .job li::before { content: ""; position: absolute; left: 2px; top: 9px; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); }
+    .job li { position: relative; padding-left: 18px; margin-bottom: 5px; font-size: 0.88rem; color: #c2c9d8; }
+    .job li::before { content: "▹"; position: absolute; left: 0; top: 0; color: var(--accent); }
 
-    .two { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+    /* tech logos */
+    .ai-row { display: flex; flex-wrap: wrap; gap: 9px; margin-bottom: 18px; }
+    .ai-chip { display: inline-flex; align-items: center; gap: 7px; font-size: 0.83rem; font-weight: 600; padding: 8px 14px; border-radius: 11px; background: linear-gradient(110deg, rgba(217,119,87,0.16), rgba(124,92,255,0.16)); border: 1px solid rgba(154,124,255,0.35); }
+    .logos { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; }
+    @media (max-width: 620px) { .logos { grid-template-columns: repeat(4, 1fr); } }
+    .logo-tile { aspect-ratio: 1.5; display: grid; place-items: center; gap: 5px; border-radius: 12px; background: rgba(255,255,255,0.04); border: 1px solid var(--glass-border); transition: transform 0.18s, border-color 0.2s; }
+    .logo-tile:hover { transform: translateY(-3px); border-color: var(--accent-2); }
+    .logo-tile img { width: 28px; height: 28px; object-fit: contain; }
+    .logo-tile .lf { display: none; font-family: 'Space Grotesk'; font-weight: 700; font-size: 0.8rem; color: var(--accent); }
+    .logo-tile .cap { font-size: 0.62rem; color: var(--muted); }
+
+    /* skill bars */
+    .bars-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 26px; }
+    @media (max-width: 620px) { .bars-grid { grid-template-columns: 1fr; } }
+    .skill .sl { display: flex; justify-content: space-between; font-size: 0.84rem; margin-bottom: 6px; }
+    .skill .sl .lvl { font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: var(--muted); }
+    .track { height: 8px; border-radius: 8px; background: rgba(255,255,255,0.07); overflow: hidden; }
+    .track i { display: block; height: 100%; border-radius: 8px; background: linear-gradient(90deg, var(--accent-2), var(--accent-3)); width: 0; transition: width 1.1s cubic-bezier(.2,.7,.2,1); }
+
+    .two { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
     @media (max-width: 620px) { .two { grid-template-columns: 1fr; } }
+    .kv { display: flex; justify-content: space-between; gap: 10px; padding: 7px 0; font-size: 0.86rem; border-bottom: 1px dashed rgba(255,255,255,0.08); }
+    .kv:last-child { border-bottom: none; }
+    .kv .k { font-weight: 600; }
+    .kv .v { color: var(--muted); text-align: right; }
+    .edu .deg { font-family: 'Space Grotesk'; font-weight: 600; font-size: 0.95rem; }
+    .edu .uni { font-size: 0.85rem; color: var(--accent-2); margin: 3px 0; }
+    .edu .note { font-size: 0.8rem; color: var(--muted); }
 
+    footer { text-align: center; color: var(--muted); font-size: 0.8rem; padding: 10px 0 40px; }
+
+    /* ---- PRINT: clean professional A4 ---- */
     @media print {
-      @page { size: A4; margin: 14mm; }
-      body { background: #fff; }
-      .aurora, .controls { display: none !important; }
-      .paper { margin: 0; max-width: 100%; box-shadow: none; border-radius: 0; }
-      .head { background: #0f1424 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-      .head, .head * { color: #fff !important; }
-      .sec { page-break-inside: avoid; }
-      .job { page-break-inside: avoid; }
+      @page { size: A4; margin: 12mm; }
+      body { background: #fff !important; color: #1c2230 !important; }
+      .aurora, .veil, .controls { display: none !important; }
+      .doc { margin: 0; max-width: 100%; padding: 0; }
+      .glass { background: #fff !important; border: 1px solid #e4e7ef !important; box-shadow: none !important; backdrop-filter: none !important; -webkit-backdrop-filter: none !important; border-radius: 10px; margin-bottom: 11px !important; }
+      .panel, .mc { padding: 16px 20px !important; }
+      .mc-av { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .summary, .job li, .kv, .enode .cm, .logo-tile .cap { color: #353d4d !important; }
+      .sec-h { color: #5566d6 !important; }
+      .mc-id .role { -webkit-text-fill-color: #5566d6 !important; }
+      .metric .n { -webkit-text-fill-color: #5566d6 !important; }
+      .cchip, .enode, .ai-chip, .logo-tile, .track, .evo-track { background: #f3f5fa !important; border: 1px solid #e4e7ef !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .track i, .evo-track i, .enode.now { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .job, .panel, .mc, .enode { page-break-inside: avoid; }
+      a { color: #1c2230 !important; }
     }
+    @media (prefers-reduced-motion: reduce) { .livedot { animation: none !important; } .track i { transition: none !important; } }
   </style>
 </head>
 <body>
   <div class="aurora"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
+  <div class="veil"></div>
 
   <div class="controls">
     <a class="ctl" href="index.html">← <span data-i18n="cv.back">Portfolio</span></a>
-    <div class="lang-toggle" role="group" aria-label="Language">
-      <button data-lang="en">EN</button>
-      <button data-lang="fi">FI</button>
-    </div>
+    <div class="lang-toggle" role="group" aria-label="Language"><button data-lang="en">EN</button><button data-lang="fi">FI</button></div>
     <button class="ctl primary" onclick="window.print()">⤓ <span data-i18n="cv.download">Save as PDF</span></button>
   </div>
 
-  <div class="paper">
-    <div class="head">
-      <h1>Ankit Katiyar</h1>
-      <div class="role" data-i18n="cv.title">Applied AI Engineer</div>
+  <div class="doc">
+
+    <!-- model-card header -->
+    <div class="glass mc">
+      <div class="mc-top">
+        <div class="mc-av">AK</div>
+        <div class="mc-id">
+          <h1>Ankit Katiyar</h1>
+          <div class="role" data-i18n="cv.title">Applied AI Engineer</div>
+          <div class="tagline" data-i18n="cv.model">model: ankit-katiyar · v2026 · finetuned on 13+ yrs of shipping software</div>
+        </div>
+        <div class="mc-status"><span class="livedot"></span> <span data-i18n="cv.status">AVAILABLE</span></div>
+      </div>
       <div class="contact">
-        <span>📍 <span data-i18n="cv.loc">Finland</span></span>
-        <a href="mailto:ankit.katiyar91@gmail.com">✉️ ankit.katiyar91@gmail.com</a>
-        <span>📞 +358 40 482 6681</span>
-        <a href="https://www.linkedin.com/in/therealsignet" target="_blank" rel="noopener">in/therealsignet</a>
-        <a href="https://github.com/ankitkatiyar567" target="_blank" rel="noopener">github.com/ankitkatiyar567</a>
-        <a href="https://medium.com/@theRealSignet" target="_blank" rel="noopener">medium/@theRealSignet</a>
+        <span class="cchip">📍 <span data-i18n="cv.loc">Finland</span></span>
+        <a class="cchip" href="mailto:ankit.katiyar91@gmail.com">✉️ ankit.katiyar91@gmail.com</a>
+        <span class="cchip">📞 +358 40 482 6681</span>
+        <a class="cchip" href="https://www.linkedin.com/in/therealsignet" target="_blank" rel="noopener">in/therealsignet</a>
+        <a class="cchip" href="https://github.com/ankitkatiyar567" target="_blank" rel="noopener">github.com/ankitkatiyar567</a>
+        <a class="cchip" href="https://medium.com/@theRealSignet" target="_blank" rel="noopener">@theRealSignet</a>
       </div>
     </div>
 
-    <div class="body">
-      <div class="sec">
-        <h2 data-i18n="cv.s.summary">Professional Summary</h2>
-        <p class="summary" data-i18n="cv.summary">Applied AI Engineer with 13+ years of software engineering experience, now focused on building scalable, secure AI agents and agentic workflows. I design and implement intelligent multi-agent systems that automate complex software-development workflows — from code generation and testing through deployment and maintenance — integrating LLMs via the Model Context Protocol (MCP) and reusable Claude Skills. This builds on deep expertise in Java 17, Spring Boot, NestJS, microservices, AWS and Kubernetes, delivered across renewable energy, smart metering, logistics and real estate. I bridge AI research and functional business applications, advocating for smaller, specialized, tool-centric AI.</p>
-      </div>
+    <!-- metrics -->
+    <div class="metrics">
+      <div class="glass metric"><div class="n">13+</div><div class="l" data-i18n="cv.m.years">Years shipping software</div></div>
+      <div class="glass metric"><div class="n">24×7</div><div class="l" data-i18n="cv.m.uptime">AI factories running</div></div>
+      <div class="glass metric"><div class="n">6</div><div class="l" data-i18n="cv.m.agents">Agents per factory</div></div>
+      <div class="glass metric"><div class="n">5</div><div class="l" data-i18n="cv.m.co">Companies shipped for</div></div>
+    </div>
 
-      <div class="sec">
-        <h2 data-i18n="cv.s.skills">Core Skills</h2>
-        <div class="skillrow hl"><div class="k" data-i18n="cv.sk.ai">AI / Agentic</div><div class="v">Agentic Workflows, Multi-Agent Systems, Model Context Protocol (MCP), Claude Skills, LLM Orchestration, AI-assisted development</div></div>
-        <div class="skillrow"><div class="k" data-i18n="cv.sk.lang">Languages</div><div class="v">Java, J2EE, Python, Scala, TypeScript, NestJS, SQL, PL/SQL, C</div></div>
-        <div class="skillrow"><div class="k" data-i18n="cv.sk.fw">Frameworks</div><div class="v">Spring Boot, Spring Security, Spring REST, Hibernate, Angular, JUnit, Apache Camel, Apache NiFi</div></div>
-        <div class="skillrow"><div class="k" data-i18n="cv.sk.cloud">Cloud & DevOps</div><div class="v">AWS (Lambda, S3, EC2, SQS, CloudFormation), Docker, Kubernetes, Helm, Jenkins, Git, Bitbucket, CI/CD</div></div>
-        <div class="skillrow"><div class="k" data-i18n="cv.sk.data">Data & IAM</div><div class="v">PostgreSQL, MongoDB, Oracle, MySQL, Keycloak (OAuth2 / JWT)</div></div>
-        <div class="skillrow"><div class="k" data-i18n="cv.sk.arch">Architecture</div><div class="v">Microservices, Event-driven (SQS/SNS), SOA, REST, Design Patterns, SAFe Agile / Scrum, TDD</div></div>
-      </div>
+    <!-- summary -->
+    <div class="glass panel">
+      <div class="sec-h" data-i18n="cv.s.summary">summary</div>
+      <p class="summary" data-i18n="cv.summary">Applied AI Engineer with <strong>13+ years</strong> of software engineering, now building <strong>autonomous software factories</strong> — multi-agent systems that take a requirement and ship a reviewed pull request end-to-end, running <strong>24×7 on local and AWS EC2</strong>. I integrate LLMs through the <strong>Model Context Protocol (MCP)</strong> and reusable <strong>Claude Skills</strong>, on a deep foundation of Java 17, Spring Boot, NestJS, microservices, AWS and Kubernetes — delivered across renewable energy, smart metering, logistics and real estate.</p>
+    </div>
 
-      <div class="sec">
-        <h2 data-i18n="cv.s.exp">Experience</h2>
-
-        <div class="job">
-          <div class="job-head"><div class="t" data-i18n="cv.j1.t">Applied AI Engineer</div><div class="when">Vaisala · Finland · 2026 — <span data-i18n="cv.present">Present</span></div></div>
-          <div class="co">Vaisala Oyj</div>
-          <ul>
-            <li data-i18n="cv.j1.1">Design and build scalable, secure AI agents and agentic workflows that automate software-development tasks end-to-end — code generation, testing, deployment and maintenance.</li>
-            <li data-i18n="cv.j1.2">Architected a multi-agent system for a microservices platform where agents coordinate, communicate and orchestrate services to improve reliability.</li>
-            <li data-i18n="cv.j1.3">Integrate LLMs through the Model Context Protocol (MCP) and reusable Claude Skills to give agents real tooling and grounded context.</li>
-            <li data-i18n="cv.j1.4">Built a free AI code-review assistant for Bitbucket Server, driven by a single markdown file, producing automated inline pull-request comments.</li>
-            <li data-i18n="cv.j1.5">Bridge AI research and functional business applications; advocate for smaller, specialized, tool-centric AI in engineering.</li>
-          </ul>
-        </div>
-
-        <div class="job">
-          <div class="job-head"><div class="t" data-i18n="cv.j2.t">Senior Software Developer</div><div class="when">Vaisala · Finland · 2023 — 2026</div></div>
-          <div class="co">Vaisala Oyj</div>
-          <ul>
-            <li data-i18n="cv.j2.1">Designed and developed secure, high-performance Java 17 / Spring Boot and NestJS microservices for renewable-energy SaaS on AWS and Kubernetes.</li>
-            <li data-i18n="cv.j2.2">Contributed to system architecture and design decisions; implemented security with Spring Security and Keycloak.</li>
-            <li data-i18n="cv.j2.3">Drove code quality through automated testing (JUnit, integration tests), code reviews and CI/CD pipelines.</li>
-            <li data-i18n="cv.j2.4">Mentored junior developers and collaborated with cross-functional teams and non-technical stakeholders.</li>
-          </ul>
-        </div>
-
-        <div class="job">
-          <div class="job-head"><div class="t" data-i18n="cv.j3.t">Senior Software Designer / Software Designer / Senior Software Engineer</div><div class="when">Landis+Gyr · Finland & India · 2018 — 2023</div></div>
-          <div class="co">Landis+Gyr Oy</div>
-          <ul>
-            <li data-i18n="cv.j3.1">Served as Scrum Master in a SAFe Agile framework — daily stand-ups, PI planning (ADO, Stormboard) and team alignment.</li>
-            <li data-i18n="cv.j3.2">Delivered across the full SDLC for smart-metering platforms: requirements, design (sequence/component diagrams), development, testing and maintenance.</li>
-            <li data-i18n="cv.j3.3">Worked in a TDD environment with Git, Jira, Jenkins and Gradle; led code reviews and technical documentation.</li>
-            <li data-i18n="cv.j3.4">Mentored developers and supported high-quality delivery through peer review and guidance.</li>
-          </ul>
-        </div>
-
-        <div class="job">
-          <div class="job-head"><div class="t" data-i18n="cv.j4.t">Senior Software Engineer / Software Engineer</div><div class="when">ARX Analytics & Advisory · India · 2016 — 2018</div></div>
-          <div class="co">Arx Tech-AXS Pvt. Ltd.</div>
-          <ul>
-            <li data-i18n="cv.j4.1">Designed high-level and low-level architecture as technical architect — technology integration, workflow definition and security layers.</li>
-            <li data-i18n="cv.j4.2">Led development teams, defined technical tasks, mentored developers and aligned delivery with architectural vision.</li>
-            <li data-i18n="cv.j4.3">Bridged communication between developers, project managers and business analysts, translating requirements into technical solutions.</li>
-          </ul>
-        </div>
-
-        <div class="job">
-          <div class="job-head"><div class="t" data-i18n="cv.j5.t">Java / J2EE Developer</div><div class="when">Ipseity Group · India · 2013 — 2016</div></div>
-          <div class="co">Ipseity Group</div>
-          <ul>
-            <li data-i18n="cv.j5.1">Participated in all phases of the SDLC — analysis, design, development, testing and deployment — based on functional requirements.</li>
-            <li data-i18n="cv.j5.2">Developed UI components and business logic, integrated multiple frameworks, and resolved post-production issues.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="two">
-        <div class="sec">
-          <h2 data-i18n="cv.s.edu">Education</h2>
-          <div class="job">
-            <div class="job-head"><div class="t" data-i18n="cv.edu.deg">B.Tech, Electronics & Communication Engineering</div></div>
-            <div class="co">Uttar Pradesh Technical University, India</div>
-            <ul><li data-i18n="cv.edu.note">2008 — 2012 · Coursework in embedded systems development.</li></ul>
-          </div>
-        </div>
-        <div class="sec">
-          <h2 data-i18n="cv.s.lang">Languages</h2>
-          <div class="skillrow"><div class="k" data-i18n="cv.l.hi">Hindi</div><div class="v" data-i18n="cv.l.hiv">Native / Bilingual</div></div>
-          <div class="skillrow"><div class="k" data-i18n="cv.l.en">English</div><div class="v" data-i18n="cv.l.env">Full professional</div></div>
-          <div class="skillrow"><div class="k" data-i18n="cv.l.fi">Finnish</div><div class="v" data-i18n="cv.l.fiv">Elementary</div></div>
-        </div>
+    <!-- career evolution -->
+    <div class="glass panel">
+      <div class="sec-h" data-i18n="cv.s.evo">career.evolution()</div>
+      <div class="evo-track"><i></i></div>
+      <div class="evo">
+        <div class="enode"><div class="ver">v1 · foundations</div><div class="yr">2013 — 2016</div><div class="rl" data-i18n="cv.e1">Java / J2EE Developer</div><div class="cm">Ipseity Group</div></div>
+        <div class="enode"><div class="ver">v2 · architecture</div><div class="yr">2016 — 2018</div><div class="rl" data-i18n="cv.e2">Senior Software Engineer</div><div class="cm">ARX Analytics</div></div>
+        <div class="enode"><div class="ver">v3 · scale + agile</div><div class="yr">2018 — 2023</div><div class="rl" data-i18n="cv.e3">Sr Designer / Engineer</div><div class="cm">Landis+Gyr</div></div>
+        <div class="enode"><div class="ver">v4 · cloud micro­services</div><div class="yr">2023 — 2026</div><div class="rl" data-i18n="cv.e4">Senior Software Developer</div><div class="cm">Vaisala</div></div>
+        <div class="enode now"><div class="ver">v5 · agentic AI</div><div class="yr">2026 — <span data-i18n="cv.present">Now</span></div><div class="rl" data-i18n="cv.e5">Applied AI Engineer</div><div class="cm">Vaisala</div><div class="nowtag"><span class="livedot"></span> <span data-i18n="cv.current">CURRENT</span></div></div>
       </div>
     </div>
+
+    <!-- experience detail -->
+    <div class="glass panel">
+      <div class="sec-h" data-i18n="cv.s.exp">experience</div>
+
+      <div class="job">
+        <div class="job-head"><div class="t" data-i18n="cv.j1.t">Applied AI Engineer</div><div class="when">Vaisala · Finland · 2026 — <span data-i18n="cv.present">Now</span></div></div>
+        <div class="co">Vaisala Oyj</div>
+        <ul>
+          <li data-i18n="cv.j1.1">Build <strong>autonomous software factories</strong> — multi-agent AI systems that ship code, tests, deployment and maintenance end-to-end, running 24×7 locally and on AWS EC2.</li>
+          <li data-i18n="cv.j1.2">Architected a multi-agent setup for a microservices platform where agents coordinate, communicate and orchestrate services to improve reliability.</li>
+          <li data-i18n="cv.j1.3">Integrate LLMs via the Model Context Protocol (MCP) and reusable Claude Skills for grounded tooling and context.</li>
+          <li data-i18n="cv.j1.4">Built a free AI code-review assistant for Bitbucket Server, driven by a single markdown file, producing automated inline PR comments.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-head"><div class="t" data-i18n="cv.j2.t">Senior Software Developer</div><div class="when">Vaisala · Finland · 2023 — 2026</div></div>
+        <div class="co">Vaisala Oyj</div>
+        <ul>
+          <li data-i18n="cv.j2.1">Designed secure, high-performance Java 17 / Spring Boot and NestJS microservices for renewable-energy SaaS on AWS and Kubernetes.</li>
+          <li data-i18n="cv.j2.2">Drove code quality via automated testing, code reviews and CI/CD; implemented security with Spring Security and Keycloak.</li>
+          <li data-i18n="cv.j2.3">Mentored developers and collaborated with cross-functional teams and non-technical stakeholders.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-head"><div class="t" data-i18n="cv.j3.t">Sr Software Designer / Software Designer / Sr Engineer</div><div class="when">Landis+Gyr · FI &amp; IN · 2018 — 2023</div></div>
+        <div class="co">Landis+Gyr Oy</div>
+        <ul>
+          <li data-i18n="cv.j3.1">Scrum Master in a SAFe Agile framework — stand-ups, PI planning (ADO, Stormboard) and team alignment.</li>
+          <li data-i18n="cv.j3.2">Full-SDLC delivery on smart-metering platforms: design, development, testing and maintenance in a TDD environment.</li>
+          <li data-i18n="cv.j3.3">Led code reviews, technical documentation and developer mentoring.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-head"><div class="t" data-i18n="cv.j4.t">Senior Software Engineer / Software Engineer</div><div class="when">ARX Analytics · India · 2016 — 2018</div></div>
+        <div class="co">Arx Tech-AXS Pvt. Ltd.</div>
+        <ul>
+          <li data-i18n="cv.j4.1">Technical architect — high/low-level architecture, technology integration, workflow definition and security layers.</li>
+          <li data-i18n="cv.j4.2">Led teams, defined technical tasks and translated business requirements into solutions.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-head"><div class="t" data-i18n="cv.j5.t">Java / J2EE Developer</div><div class="when">Ipseity Group · India · 2013 — 2016</div></div>
+        <div class="co">Ipseity Group</div>
+        <ul>
+          <li data-i18n="cv.j5.1">Full-SDLC delivery — analysis, design, development, testing and deployment of enterprise Java applications.</li>
+          <li data-i18n="cv.j5.2">Built UI components and business logic, integrated multiple frameworks and resolved production issues.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- tech stack -->
+    <div class="glass panel">
+      <div class="sec-h" data-i18n="cv.s.stack">tech.stack</div>
+      <div class="ai-row">
+        <span class="ai-chip">🤖 Agentic Workflows</span>
+        <span class="ai-chip">🧩 MCP</span>
+        <span class="ai-chip">✦ Claude Skills</span>
+        <span class="ai-chip">🕸️ Multi-Agent Systems</span>
+        <span class="ai-chip">⚡ LLM Orchestration</span>
+      </div>
+      <div class="logos">
+        <div class="logo-tile"><img alt="Java" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="lf">Java</span><span class="cap">Java 17</span></div>
+        <div class="logo-tile"><img alt="Spring" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="lf">Spring</span><span class="cap">Spring Boot</span></div>
+        <div class="logo-tile"><img alt="NestJS" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-original.svg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="lf">Nest</span><span class="cap">NestJS</span></div>
+        <div class="logo-tile"><img alt="TypeScript" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="lf">TS</span><span class="cap">TypeScript</span></div>
+        <div class="logo-tile"><img alt="Python" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="lf">Py</span><span class="cap">Python</span></div>
+        <div class="logo-tile"><img alt="AWS" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="lf">AWS</span><span class="cap">AWS EC2</span></div>
+        <div class="logo-tile"><img alt="Docker" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="lf">Docker</span><span class="cap">Docker</span></div>
+        <div class="logo-tile"><img alt="Kubernetes" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-original.svg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="lf">K8s</span><span class="cap">Kubernetes</span></div>
+        <div class="logo-tile"><img alt="PostgreSQL" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="lf">PG</span><span class="cap">PostgreSQL</span></div>
+        <div class="logo-tile"><img alt="MongoDB" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="lf">Mongo</span><span class="cap">MongoDB</span></div>
+        <div class="logo-tile"><img alt="Jenkins" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="lf">Jenkins</span><span class="cap">CI/CD</span></div>
+        <div class="logo-tile"><img alt="Keycloak" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="lf">Git</span><span class="cap">Git</span></div>
+      </div>
+    </div>
+
+    <!-- skill proficiency -->
+    <div class="glass panel">
+      <div class="sec-h" data-i18n="cv.s.skills">skills.proficiency</div>
+      <div class="bars-grid">
+        <div class="skill"><div class="sl"><span data-i18n="cv.sk.ai">AI / Agentic Systems</span><span class="lvl">Expert</span></div><div class="track"><i data-w="92"></i></div></div>
+        <div class="skill"><div class="sl"><span data-i18n="cv.sk.java">Java · Spring Boot</span><span class="lvl">Expert</span></div><div class="track"><i data-w="96"></i></div></div>
+        <div class="skill"><div class="sl"><span data-i18n="cv.sk.micro">Microservices · Architecture</span><span class="lvl">Expert</span></div><div class="track"><i data-w="92"></i></div></div>
+        <div class="skill"><div class="sl"><span data-i18n="cv.sk.cloud">AWS · Kubernetes · DevOps</span><span class="lvl">Advanced</span></div><div class="track"><i data-w="88"></i></div></div>
+        <div class="skill"><div class="sl"><span data-i18n="cv.sk.node">NestJS · TypeScript</span><span class="lvl">Advanced</span></div><div class="track"><i data-w="82"></i></div></div>
+        <div class="skill"><div class="sl"><span data-i18n="cv.sk.py">Python</span><span class="lvl">Advanced</span></div><div class="track"><i data-w="80"></i></div></div>
+      </div>
+    </div>
+
+    <!-- education + languages -->
+    <div class="two">
+      <div class="glass panel edu">
+        <div class="sec-h" data-i18n="cv.s.edu">education</div>
+        <div class="deg" data-i18n="cv.edu.deg">B.Tech · Electronics &amp; Communication Eng.</div>
+        <div class="uni">Uttar Pradesh Technical University, India</div>
+        <div class="note" data-i18n="cv.edu.note">2008 — 2012 · Coursework in embedded systems.</div>
+      </div>
+      <div class="glass panel">
+        <div class="sec-h" data-i18n="cv.s.lang">languages</div>
+        <div class="kv"><span class="k" data-i18n="cv.l.hi">Hindi</span><span class="v" data-i18n="cv.l.hiv">Native / Bilingual</span></div>
+        <div class="kv"><span class="k" data-i18n="cv.l.en">English</span><span class="v" data-i18n="cv.l.env">Full professional</span></div>
+        <div class="kv"><span class="k" data-i18n="cv.l.fi">Finnish</span><span class="v" data-i18n="cv.l.fiv">Elementary</span></div>
+      </div>
+    </div>
+
+    <footer data-i18n="cv.foot">Generated as an AI-themed CV · ankitkatiyar567.github.io</footer>
   </div>
 
   <script>
     var I18N = {
       en: {
-        'cv.back': 'Portfolio', 'cv.download': 'Save as PDF', 'cv.title': 'Applied AI Engineer', 'cv.loc': 'Finland', 'cv.present': 'Present',
-        'cv.s.summary': 'Professional Summary',
-        'cv.summary': 'Applied AI Engineer with 13+ years of software engineering experience, now focused on building scalable, secure AI agents and agentic workflows. I design and implement intelligent multi-agent systems that automate complex software-development workflows — from code generation and testing through deployment and maintenance — integrating LLMs via the Model Context Protocol (MCP) and reusable Claude Skills. This builds on deep expertise in Java 17, Spring Boot, NestJS, microservices, AWS and Kubernetes, delivered across renewable energy, smart metering, logistics and real estate. I bridge AI research and functional business applications, advocating for smaller, specialized, tool-centric AI.',
-        'cv.s.skills': 'Core Skills',
-        'cv.sk.ai': 'AI / Agentic', 'cv.sk.lang': 'Languages', 'cv.sk.fw': 'Frameworks', 'cv.sk.cloud': 'Cloud & DevOps', 'cv.sk.data': 'Data & IAM', 'cv.sk.arch': 'Architecture',
-        'cv.s.exp': 'Experience',
-        'cv.j1.t': 'Applied AI Engineer',
-        'cv.j1.1': 'Design and build scalable, secure AI agents and agentic workflows that automate software-development tasks end-to-end — code generation, testing, deployment and maintenance.',
-        'cv.j1.2': 'Architected a multi-agent system for a microservices platform where agents coordinate, communicate and orchestrate services to improve reliability.',
-        'cv.j1.3': 'Integrate LLMs through the Model Context Protocol (MCP) and reusable Claude Skills to give agents real tooling and grounded context.',
-        'cv.j1.4': 'Built a free AI code-review assistant for Bitbucket Server, driven by a single markdown file, producing automated inline pull-request comments.',
-        'cv.j1.5': 'Bridge AI research and functional business applications; advocate for smaller, specialized, tool-centric AI in engineering.',
-        'cv.j2.t': 'Senior Software Developer',
-        'cv.j2.1': 'Designed and developed secure, high-performance Java 17 / Spring Boot and NestJS microservices for renewable-energy SaaS on AWS and Kubernetes.',
-        'cv.j2.2': 'Contributed to system architecture and design decisions; implemented security with Spring Security and Keycloak.',
-        'cv.j2.3': 'Drove code quality through automated testing (JUnit, integration tests), code reviews and CI/CD pipelines.',
-        'cv.j2.4': 'Mentored junior developers and collaborated with cross-functional teams and non-technical stakeholders.',
-        'cv.j3.t': 'Senior Software Designer / Software Designer / Senior Software Engineer',
-        'cv.j3.1': 'Served as Scrum Master in a SAFe Agile framework — daily stand-ups, PI planning (ADO, Stormboard) and team alignment.',
-        'cv.j3.2': 'Delivered across the full SDLC for smart-metering platforms: requirements, design (sequence/component diagrams), development, testing and maintenance.',
-        'cv.j3.3': 'Worked in a TDD environment with Git, Jira, Jenkins and Gradle; led code reviews and technical documentation.',
-        'cv.j3.4': 'Mentored developers and supported high-quality delivery through peer review and guidance.',
-        'cv.j4.t': 'Senior Software Engineer / Software Engineer',
-        'cv.j4.1': 'Designed high-level and low-level architecture as technical architect — technology integration, workflow definition and security layers.',
-        'cv.j4.2': 'Led development teams, defined technical tasks, mentored developers and aligned delivery with architectural vision.',
-        'cv.j4.3': 'Bridged communication between developers, project managers and business analysts, translating requirements into technical solutions.',
-        'cv.j5.t': 'Java / J2EE Developer',
-        'cv.j5.1': 'Participated in all phases of the SDLC — analysis, design, development, testing and deployment — based on functional requirements.',
-        'cv.j5.2': 'Developed UI components and business logic, integrated multiple frameworks, and resolved post-production issues.',
-        'cv.s.edu': 'Education', 'cv.edu.deg': 'B.Tech, Electronics & Communication Engineering', 'cv.edu.note': '2008 — 2012 · Coursework in embedded systems development.',
-        'cv.s.lang': 'Languages', 'cv.l.hi': 'Hindi', 'cv.l.hiv': 'Native / Bilingual', 'cv.l.en': 'English', 'cv.l.env': 'Full professional', 'cv.l.fi': 'Finnish', 'cv.l.fiv': 'Elementary'
+        'cv.back':'Portfolio','cv.download':'Save as PDF','cv.title':'Applied AI Engineer','cv.loc':'Finland','cv.present':'Now','cv.current':'CURRENT','cv.status':'AVAILABLE',
+        'cv.model':'model: ankit-katiyar · v2026 · finetuned on 13+ yrs of shipping software',
+        'cv.m.years':'Years shipping software','cv.m.uptime':'AI factories running','cv.m.agents':'Agents per factory','cv.m.co':'Companies shipped for',
+        'cv.s.summary':'summary',
+        'cv.summary':'Applied AI Engineer with <strong>13+ years</strong> of software engineering, now building <strong>autonomous software factories</strong> — multi-agent systems that take a requirement and ship a reviewed pull request end-to-end, running <strong>24×7 on local and AWS EC2</strong>. I integrate LLMs through the <strong>Model Context Protocol (MCP)</strong> and reusable <strong>Claude Skills</strong>, on a deep foundation of Java 17, Spring Boot, NestJS, microservices, AWS and Kubernetes — delivered across renewable energy, smart metering, logistics and real estate.',
+        'cv.s.evo':'career.evolution()',
+        'cv.e1':'Java / J2EE Developer','cv.e2':'Senior Software Engineer','cv.e3':'Sr Designer / Engineer','cv.e4':'Senior Software Developer','cv.e5':'Applied AI Engineer',
+        'cv.s.exp':'experience',
+        'cv.j1.t':'Applied AI Engineer',
+        'cv.j1.1':'Build <strong>autonomous software factories</strong> — multi-agent AI systems that ship code, tests, deployment and maintenance end-to-end, running 24×7 locally and on AWS EC2.',
+        'cv.j1.2':'Architected a multi-agent setup for a microservices platform where agents coordinate, communicate and orchestrate services to improve reliability.',
+        'cv.j1.3':'Integrate LLMs via the Model Context Protocol (MCP) and reusable Claude Skills for grounded tooling and context.',
+        'cv.j1.4':'Built a free AI code-review assistant for Bitbucket Server, driven by a single markdown file, producing automated inline PR comments.',
+        'cv.j2.t':'Senior Software Developer',
+        'cv.j2.1':'Designed secure, high-performance Java 17 / Spring Boot and NestJS microservices for renewable-energy SaaS on AWS and Kubernetes.',
+        'cv.j2.2':'Drove code quality via automated testing, code reviews and CI/CD; implemented security with Spring Security and Keycloak.',
+        'cv.j2.3':'Mentored developers and collaborated with cross-functional teams and non-technical stakeholders.',
+        'cv.j3.t':'Sr Software Designer / Software Designer / Sr Engineer',
+        'cv.j3.1':'Scrum Master in a SAFe Agile framework — stand-ups, PI planning (ADO, Stormboard) and team alignment.',
+        'cv.j3.2':'Full-SDLC delivery on smart-metering platforms: design, development, testing and maintenance in a TDD environment.',
+        'cv.j3.3':'Led code reviews, technical documentation and developer mentoring.',
+        'cv.j4.t':'Senior Software Engineer / Software Engineer',
+        'cv.j4.1':'Technical architect — high/low-level architecture, technology integration, workflow definition and security layers.',
+        'cv.j4.2':'Led teams, defined technical tasks and translated business requirements into solutions.',
+        'cv.j5.t':'Java / J2EE Developer',
+        'cv.j5.1':'Full-SDLC delivery — analysis, design, development, testing and deployment of enterprise Java applications.',
+        'cv.j5.2':'Built UI components and business logic, integrated multiple frameworks and resolved production issues.',
+        'cv.s.stack':'tech.stack',
+        'cv.s.skills':'skills.proficiency','cv.sk.ai':'AI / Agentic Systems','cv.sk.java':'Java · Spring Boot','cv.sk.micro':'Microservices · Architecture','cv.sk.cloud':'AWS · Kubernetes · DevOps','cv.sk.node':'NestJS · TypeScript','cv.sk.py':'Python',
+        'cv.s.edu':'education','cv.edu.deg':'B.Tech · Electronics & Communication Eng.','cv.edu.note':'2008 — 2012 · Coursework in embedded systems.',
+        'cv.s.lang':'languages','cv.l.hi':'Hindi','cv.l.hiv':'Native / Bilingual','cv.l.en':'English','cv.l.env':'Full professional','cv.l.fi':'Finnish','cv.l.fiv':'Elementary',
+        'cv.foot':'AI-themed CV · ankitkatiyar567.github.io'
       },
       fi: {
-        'cv.back': 'Portfolio', 'cv.download': 'Tallenna PDF', 'cv.title': 'Soveltava tekoälyinsinööri', 'cv.loc': 'Suomi', 'cv.present': 'Nykyhetki',
-        'cv.s.summary': 'Ammatillinen yhteenveto',
-        'cv.summary': 'Soveltava tekoälyinsinööri, jolla on yli 13 vuoden ohjelmistokehityskokemus ja joka keskittyy nyt skaalautuvien ja turvallisten tekoälyagenttien ja agenttisten työnkulkujen rakentamiseen. Suunnittelen ja toteutan älykkäitä moniagenttijärjestelmiä, jotka automatisoivat monimutkaisia ohjelmistokehityksen työnkulkuja — koodin generoinnista ja testauksesta käyttöönottoon ja ylläpitoon — integroiden kielimalleja Model Context Protocolin (MCP) ja uudelleenkäytettävien Claude Skills -taitojen kautta. Tämä perustuu vankkaan osaamiseen Java 17:ssä, Spring Bootissa, NestJS:ssä, mikropalveluissa, AWS:ssä ja Kubernetesissa, hankittuna uusiutuvan energian, älykkään mittauksen, logistiikan ja kiinteistöalan parissa. Yhdistän tekoälytutkimuksen ja todelliset liiketoimintasovellukset ja kannatan pienempää, erikoistunutta ja työkalukeskeistä tekoälyä.',
-        'cv.s.skills': 'Ydinosaaminen',
-        'cv.sk.ai': 'Tekoäly / agentit', 'cv.sk.lang': 'Kielet', 'cv.sk.fw': 'Kehykset', 'cv.sk.cloud': 'Pilvi & DevOps', 'cv.sk.data': 'Data & IAM', 'cv.sk.arch': 'Arkkitehtuuri',
-        'cv.s.exp': 'Työkokemus',
-        'cv.j1.t': 'Soveltava tekoälyinsinööri',
-        'cv.j1.1': 'Suunnittelen ja rakennan skaalautuvia ja turvallisia tekoälyagentteja ja agenttisia työnkulkuja, jotka automatisoivat ohjelmistokehityksen tehtäviä päästä päähän — koodin generointi, testaus, käyttöönotto ja ylläpito.',
-        'cv.j1.2': 'Suunnittelin moniagenttijärjestelmän mikropalvelualustalle, jossa agentit koordinoivat, kommunikoivat ja orkestroivat palveluita luotettavuuden parantamiseksi.',
-        'cv.j1.3': 'Integroin kielimalleja Model Context Protocolin (MCP) ja uudelleenkäytettävien Claude Skills -taitojen kautta antaakseni agenteille todellisia työkaluja ja kontekstia.',
-        'cv.j1.4': 'Rakensin ilmaisen tekoälypohjaisen koodikatselmointityökalun Bitbucket Serverille, jota ohjaa yksittäinen markdown-tiedosto ja joka tuottaa automaattisia rivikommentteja pull requesteihin.',
-        'cv.j1.5': 'Yhdistän tekoälytutkimuksen ja todelliset liiketoimintasovellukset; kannatan pienempää, erikoistunutta ja työkalukeskeistä tekoälyä.',
-        'cv.j2.t': 'Vanhempi ohjelmistokehittäjä',
-        'cv.j2.1': 'Suunnittelin ja kehitin turvallisia, suorituskykyisiä Java 17 / Spring Boot- ja NestJS-mikropalveluja uusiutuvan energian SaaS-ratkaisuihin AWS:llä ja Kubernetesilla.',
-        'cv.j2.2': 'Osallistuin järjestelmäarkkitehtuuriin ja suunnittelupäätöksiin; toteutin tietoturvan Spring Securityllä ja Keycloakilla.',
-        'cv.j2.3': 'Varmistin koodin laadun automatisoidulla testauksella (JUnit, integraatiotestit), koodikatselmoinneilla ja CI/CD-putkilla.',
-        'cv.j2.4': 'Mentoroin nuorempia kehittäjiä ja tein yhteistyötä monialaisten tiimien ja ei-teknisten sidosryhmien kanssa.',
-        'cv.j3.t': 'Vanhempi ohjelmistosuunnittelija / Ohjelmistosuunnittelija / Vanhempi ohjelmistoinsinööri',
-        'cv.j3.1': 'Toimin Scrum Masterina SAFe Agile -mallissa — päivittäiset palaverit, PI-suunnittelu (ADO, Stormboard) ja tiimin yhtenäistäminen.',
-        'cv.j3.2': 'Toimitin koko SDLC:n älykkään mittauksen alustoille: vaatimukset, suunnittelu (sekvenssi-/komponenttikaaviot), kehitys, testaus ja ylläpito.',
-        'cv.j3.3': 'Työskentelin TDD-ympäristössä Gitin, Jiran, Jenkinsin ja Gradlen kanssa; johdin koodikatselmointeja ja teknistä dokumentaatiota.',
-        'cv.j3.4': 'Mentoroin kehittäjiä ja tuin laadukasta toimitusta vertaisarvioinnin ja ohjauksen avulla.',
-        'cv.j4.t': 'Vanhempi ohjelmistoinsinööri / Ohjelmistoinsinööri',
-        'cv.j4.1': 'Suunnittelin korkean ja matalan tason arkkitehtuurin teknisenä arkkitehtina — teknologiaintegraatio, työnkulkujen määrittely ja tietoturvakerrokset.',
-        'cv.j4.2': 'Johdin kehitystiimejä, määrittelin tekniset tehtävät, mentoroin kehittäjiä ja yhtenäistin toimituksen arkkitehtuurin kanssa.',
-        'cv.j4.3': 'Toimin kehittäjien, projektipäälliköiden ja liiketoiminta-analyytikoiden välisenä siltana, muuntaen vaatimukset teknisiksi ratkaisuiksi.',
-        'cv.j5.t': 'Java / J2EE -kehittäjä',
-        'cv.j5.1': 'Osallistuin kaikkiin SDLC:n vaiheisiin — analyysi, suunnittelu, kehitys, testaus ja käyttöönotto — toiminnallisten vaatimusten pohjalta.',
-        'cv.j5.2': 'Kehitin käyttöliittymäkomponentteja ja liiketoimintalogiikkaa, integroin useita kehyksiä ja ratkaisin tuotannon jälkeisiä ongelmia.',
-        'cv.s.edu': 'Koulutus', 'cv.edu.deg': 'B.Tech, elektroniikka- ja tietoliikennetekniikka', 'cv.edu.note': '2008 — 2012 · Opintoja sulautettujen järjestelmien kehityksessä.',
-        'cv.s.lang': 'Kielet', 'cv.l.hi': 'Hindi', 'cv.l.hiv': 'Äidinkieli / kaksikielinen', 'cv.l.en': 'Englanti', 'cv.l.env': 'Erinomainen (ammatillinen)', 'cv.l.fi': 'Suomi', 'cv.l.fiv': 'Alkeet'
+        'cv.back':'Portfolio','cv.download':'Tallenna PDF','cv.title':'Soveltava tekoälyinsinööri','cv.loc':'Suomi','cv.present':'Nyt','cv.current':'NYKYINEN','cv.status':'TAVOITETTAVISSA',
+        'cv.model':'malli: ankit-katiyar · v2026 · hienosäädetty 13+ vuoden ohjelmistokokemuksella',
+        'cv.m.years':'Vuotta ohjelmistokehitystä','cv.m.uptime':'Tekoälytehtaat käynnissä','cv.m.agents':'Agenttia / tehdas','cv.m.co':'Yritystä, joille toimittanut',
+        'cv.s.summary':'yhteenveto',
+        'cv.summary':'Soveltava tekoälyinsinööri, jolla on <strong>yli 13 vuoden</strong> ohjelmistokehityskokemus ja joka rakentaa nyt <strong>itsenäisiä ohjelmistotehtaita</strong> — moniagenttijärjestelmiä, jotka ottavat vaatimuksen ja toimittavat katselmoidun pull requestin päästä päähän, käyden <strong>24×7 paikallisesti ja AWS EC2:lla</strong>. Integroin kielimalleja <strong>Model Context Protocolin (MCP)</strong> ja uudelleenkäytettävien <strong>Claude Skills</strong> -taitojen kautta, vankalla Java 17-, Spring Boot-, NestJS-, mikropalvelu-, AWS- ja Kubernetes-pohjalla — toimitettuna uusiutuvan energian, älykkään mittauksen, logistiikan ja kiinteistöalan parissa.',
+        'cv.s.evo':'ura.kehitys()',
+        'cv.e1':'Java / J2EE -kehittäjä','cv.e2':'Vanhempi ohjelmistoinsinööri','cv.e3':'Vanh. suunnittelija / insinööri','cv.e4':'Vanhempi ohjelmistokehittäjä','cv.e5':'Soveltava tekoälyinsinööri',
+        'cv.s.exp':'työkokemus',
+        'cv.j1.t':'Soveltava tekoälyinsinööri',
+        'cv.j1.1':'Rakennan <strong>itsenäisiä ohjelmistotehtaita</strong> — moniagenttisia tekoälyjärjestelmiä, jotka toimittavat koodin, testit, käyttöönoton ja ylläpidon päästä päähän, käyden 24×7 paikallisesti ja AWS EC2:lla.',
+        'cv.j1.2':'Suunnittelin moniagenttiratkaisun mikropalvelualustalle, jossa agentit koordinoivat, kommunikoivat ja orkestroivat palveluita luotettavuuden parantamiseksi.',
+        'cv.j1.3':'Integroin kielimalleja Model Context Protocolin (MCP) ja uudelleenkäytettävien Claude Skills -taitojen kautta.',
+        'cv.j1.4':'Rakensin ilmaisen tekoälypohjaisen koodikatselmointityökalun Bitbucket Serverille, jota ohjaa yksittäinen markdown-tiedosto.',
+        'cv.j2.t':'Vanhempi ohjelmistokehittäjä',
+        'cv.j2.1':'Suunnittelin turvallisia, suorituskykyisiä Java 17 / Spring Boot- ja NestJS-mikropalveluja uusiutuvan energian SaaS-ratkaisuihin AWS:llä ja Kubernetesilla.',
+        'cv.j2.2':'Varmistin koodin laadun automatisoidulla testauksella, koodikatselmoinneilla ja CI/CD:llä; toteutin tietoturvan Spring Securityllä ja Keycloakilla.',
+        'cv.j2.3':'Mentoroin kehittäjiä ja tein yhteistyötä monialaisten tiimien ja ei-teknisten sidosryhmien kanssa.',
+        'cv.j3.t':'Vanh. ohjelmistosuunnittelija / suunnittelija / insinööri',
+        'cv.j3.1':'Scrum Master SAFe Agile -mallissa — palaverit, PI-suunnittelu (ADO, Stormboard) ja tiimin yhtenäistäminen.',
+        'cv.j3.2':'Koko SDLC:n toimitus älykkään mittauksen alustoille: suunnittelu, kehitys, testaus ja ylläpito TDD-ympäristössä.',
+        'cv.j3.3':'Johdin koodikatselmointeja, teknistä dokumentaatiota ja kehittäjien mentorointia.',
+        'cv.j4.t':'Vanhempi ohjelmistoinsinööri / ohjelmistoinsinööri',
+        'cv.j4.1':'Tekninen arkkitehti — korkean/matalan tason arkkitehtuuri, teknologiaintegraatio, työnkulut ja tietoturvakerrokset.',
+        'cv.j4.2':'Johdin tiimejä, määrittelin tekniset tehtävät ja muunsin liiketoimintavaatimukset ratkaisuiksi.',
+        'cv.j5.t':'Java / J2EE -kehittäjä',
+        'cv.j5.1':'Koko SDLC:n toimitus — analyysi, suunnittelu, kehitys, testaus ja käyttöönotto yritystason Java-sovelluksissa.',
+        'cv.j5.2':'Kehitin käyttöliittymäkomponentteja ja liiketoimintalogiikkaa, integroin kehyksiä ja ratkaisin tuotanto-ongelmia.',
+        'cv.s.stack':'tekn.pino',
+        'cv.s.skills':'taidot.taso','cv.sk.ai':'Tekoäly / agenttijärjestelmät','cv.sk.java':'Java · Spring Boot','cv.sk.micro':'Mikropalvelut · arkkitehtuuri','cv.sk.cloud':'AWS · Kubernetes · DevOps','cv.sk.node':'NestJS · TypeScript','cv.sk.py':'Python',
+        'cv.s.edu':'koulutus','cv.edu.deg':'B.Tech · elektroniikka- ja tietoliikennetekniikka','cv.edu.note':'2008 — 2012 · Opintoja sulautetuista järjestelmistä.',
+        'cv.s.lang':'kielet','cv.l.hi':'Hindi','cv.l.hiv':'Äidinkieli / kaksikielinen','cv.l.en':'Englanti','cv.l.env':'Erinomainen (ammatillinen)','cv.l.fi':'Suomi','cv.l.fiv':'Alkeet',
+        'cv.foot':'Tekoälyteemainen ansioluettelo · ankitkatiyar567.github.io'
       }
     };
     function applyLang(lang) {
       var dict = I18N[lang] || I18N.en;
       document.documentElement.lang = lang;
-      document.querySelectorAll('[data-i18n]').forEach(function (el) { var k = el.getAttribute('data-i18n'); if (dict[k] != null) el.textContent = dict[k]; });
+      document.querySelectorAll('[data-i18n]').forEach(function (el) { var k = el.getAttribute('data-i18n'); if (dict[k] != null) { if (dict[k].indexOf('<') !== -1) el.innerHTML = dict[k]; else el.textContent = dict[k]; } });
       document.querySelectorAll('.lang-toggle button').forEach(function (b) { b.classList.toggle('active', b.getAttribute('data-lang') === lang); });
       try { localStorage.setItem('lang', lang); } catch (e) {}
     }
@@ -276,6 +398,14 @@
     var initial = saved || ((navigator.language || 'en').toLowerCase().indexOf('fi') === 0 ? 'fi' : 'en');
     applyLang(initial);
     document.querySelectorAll('.lang-toggle button').forEach(function (b) { b.addEventListener('click', function () { applyLang(b.getAttribute('data-lang')); }); });
+
+    // animate skill bars on load + in view
+    function fill() { document.querySelectorAll('.track i').forEach(function (i) { i.style.width = (i.getAttribute('data-w') || 80) + '%'; }); }
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.querySelectorAll('.track i').forEach(function (i) { i.style.width = (i.getAttribute('data-w') || 80) + '%'; }); io.unobserve(e.target); } }); }, { threshold: 0.2 });
+      document.querySelectorAll('.bars-grid').forEach(function (g) { io.observe(g); });
+      setTimeout(fill, 1500);
+    } else { fill(); }
   </script>
 </body>
 </html>
