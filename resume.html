@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ankit Katiyar — CV · Applied AI Engineer</title>
+  <meta name="description" content="Curriculum Vitae of Ankit Katiyar — Applied AI Engineer at Vaisala." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23d97757'/%3E%3Cstop offset='0.5' stop-color='%237c5cff'/%3E%3Cstop offset='1' stop-color='%236e9fff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='24' fill='%23070912'/%3E%3Ctext x='50' y='68' font-family='Arial' font-size='52' font-weight='700' text-anchor='middle' fill='url(%23g)'%3EAK%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root { --accent: #d97757; --accent-2: #5566d6; --accent-3: #7c5cff; --ink: #1c2230; --muted: #5b6577; --line: #e6e9f0; --paper: #ffffff; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: #070912; color: var(--ink); line-height: 1.55; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+
+    /* aurora bg (screen only) */
+    .aurora { position: fixed; inset: 0; z-index: 0; overflow: hidden; }
+    .blob { position: absolute; border-radius: 50%; filter: blur(90px); opacity: 0.5; }
+    .b1 { width: 45vw; height: 45vw; background: #7c5cff; top: -10%; left: -8%; }
+    .b2 { width: 40vw; height: 40vw; background: #6e9fff; top: 5%; right: -10%; }
+    .b3 { width: 42vw; height: 42vw; background: #d97757; bottom: -16%; left: 20%; opacity: 0.4; }
+
+    /* floating controls */
+    .controls { position: fixed; top: 18px; right: 18px; z-index: 100; display: flex; gap: 10px; align-items: center; }
+    .ctl { display: inline-flex; align-items: center; gap: 8px; padding: 9px 15px; border-radius: 12px; font-size: 0.85rem; font-weight: 600; cursor: pointer; color: #fff; background: rgba(255,255,255,0.08); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.16); box-shadow: inset 0 1px 0 rgba(255,255,255,0.22); transition: transform 0.15s, border-color 0.2s; }
+    .ctl:hover { transform: translateY(-2px); border-color: rgba(255,255,255,0.35); }
+    .ctl.primary { background: linear-gradient(110deg, var(--accent), var(--accent-3)); border: none; }
+    .lang-toggle { display: inline-flex; padding: 3px; border-radius: 999px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.16); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
+    .lang-toggle button { font-family: 'Inter'; font-size: 0.78rem; font-weight: 600; color: rgba(255,255,255,0.7); background: none; border: none; cursor: pointer; padding: 6px 12px; border-radius: 999px; }
+    .lang-toggle button.active { color: #fff; background: linear-gradient(110deg, var(--accent), var(--accent-3)); }
+
+    /* paper */
+    .paper { position: relative; z-index: 2; max-width: 880px; margin: 70px auto; background: var(--paper); border-radius: 14px; box-shadow: 0 30px 80px rgba(0,0,0,0.55); overflow: hidden; }
+    .head { padding: 40px 48px 30px; background: linear-gradient(135deg, #0f1424, #1a1f38); color: #fff; position: relative; }
+    .head::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 4px; background: linear-gradient(90deg, var(--accent), var(--accent-3), var(--accent-2)); }
+    .head h1 { font-family: 'Space Grotesk'; font-weight: 700; font-size: 2.3rem; letter-spacing: -0.02em; }
+    .head .role { color: #c9b8ff; font-weight: 600; font-size: 1.05rem; margin-top: 2px; }
+    .contact { margin-top: 16px; display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: 0.84rem; color: #c7cde0; }
+    .contact a, .contact span { display: inline-flex; align-items: center; gap: 6px; }
+    .contact a:hover { color: #fff; }
+
+    .body { padding: 34px 48px 46px; }
+    .sec { margin-bottom: 26px; }
+    .sec:last-child { margin-bottom: 0; }
+    .sec h2 { font-family: 'Space Grotesk'; font-size: 0.95rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent-2); padding-bottom: 7px; border-bottom: 2px solid var(--line); margin-bottom: 14px; }
+    .summary { font-size: 0.96rem; color: #2c3344; }
+
+    .skillrow { display: grid; grid-template-columns: 200px 1fr; gap: 6px 18px; padding: 5px 0; font-size: 0.9rem; align-items: baseline; }
+    .skillrow .k { font-weight: 600; color: var(--ink); }
+    .skillrow .v { color: var(--muted); }
+    .skillrow.hl .k { color: var(--accent); }
+    @media (max-width: 620px) { .skillrow { grid-template-columns: 1fr; gap: 2px; } }
+
+    .job { margin-bottom: 18px; }
+    .job:last-child { margin-bottom: 0; }
+    .job-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+    .job-head .t { font-family: 'Space Grotesk'; font-weight: 600; font-size: 1.02rem; color: var(--ink); }
+    .job-head .when { font-size: 0.8rem; color: var(--muted); font-weight: 500; white-space: nowrap; }
+    .job .co { font-size: 0.88rem; color: var(--accent-2); font-weight: 600; margin-bottom: 7px; }
+    .job ul { list-style: none; }
+    .job li { position: relative; padding-left: 18px; margin-bottom: 5px; font-size: 0.89rem; color: #38404f; }
+    .job li::before { content: ""; position: absolute; left: 2px; top: 9px; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); }
+
+    .two { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+    @media (max-width: 620px) { .two { grid-template-columns: 1fr; } }
+
+    @media print {
+      @page { size: A4; margin: 14mm; }
+      body { background: #fff; }
+      .aurora, .controls { display: none !important; }
+      .paper { margin: 0; max-width: 100%; box-shadow: none; border-radius: 0; }
+      .head { background: #0f1424 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .head, .head * { color: #fff !important; }
+      .sec { page-break-inside: avoid; }
+      .job { page-break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <div class="aurora"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
+
+  <div class="controls">
+    <a class="ctl" href="index.html">← <span data-i18n="cv.back">Portfolio</span></a>
+    <div class="lang-toggle" role="group" aria-label="Language">
+      <button data-lang="en">EN</button>
+      <button data-lang="fi">FI</button>
+    </div>
+    <button class="ctl primary" onclick="window.print()">⤓ <span data-i18n="cv.download">Save as PDF</span></button>
+  </div>
+
+  <div class="paper">
+    <div class="head">
+      <h1>Ankit Katiyar</h1>
+      <div class="role" data-i18n="cv.title">Applied AI Engineer</div>
+      <div class="contact">
+        <span>📍 <span data-i18n="cv.loc">Finland</span></span>
+        <a href="mailto:ankit.katiyar91@gmail.com">✉️ ankit.katiyar91@gmail.com</a>
+        <span>📞 +358 40 482 6681</span>
+        <a href="https://www.linkedin.com/in/therealsignet" target="_blank" rel="noopener">in/therealsignet</a>
+        <a href="https://github.com/ankitkatiyar567" target="_blank" rel="noopener">github.com/ankitkatiyar567</a>
+        <a href="https://medium.com/@theRealSignet" target="_blank" rel="noopener">medium/@theRealSignet</a>
+      </div>
+    </div>
+
+    <div class="body">
+      <div class="sec">
+        <h2 data-i18n="cv.s.summary">Professional Summary</h2>
+        <p class="summary" data-i18n="cv.summary">Applied AI Engineer with 13+ years of software engineering experience, now focused on building scalable, secure AI agents and agentic workflows. I design and implement intelligent multi-agent systems that automate complex software-development workflows — from code generation and testing through deployment and maintenance — integrating LLMs via the Model Context Protocol (MCP) and reusable Claude Skills. This builds on deep expertise in Java 17, Spring Boot, NestJS, microservices, AWS and Kubernetes, delivered across renewable energy, smart metering, logistics and real estate. I bridge AI research and functional business applications, advocating for smaller, specialized, tool-centric AI.</p>
+      </div>
+
+      <div class="sec">
+        <h2 data-i18n="cv.s.skills">Core Skills</h2>
+        <div class="skillrow hl"><div class="k" data-i18n="cv.sk.ai">AI / Agentic</div><div class="v">Agentic Workflows, Multi-Agent Systems, Model Context Protocol (MCP), Claude Skills, LLM Orchestration, AI-assisted development</div></div>
+        <div class="skillrow"><div class="k" data-i18n="cv.sk.lang">Languages</div><div class="v">Java, J2EE, Python, Scala, TypeScript, NestJS, SQL, PL/SQL, C</div></div>
+        <div class="skillrow"><div class="k" data-i18n="cv.sk.fw">Frameworks</div><div class="v">Spring Boot, Spring Security, Spring REST, Hibernate, Angular, JUnit, Apache Camel, Apache NiFi</div></div>
+        <div class="skillrow"><div class="k" data-i18n="cv.sk.cloud">Cloud & DevOps</div><div class="v">AWS (Lambda, S3, EC2, SQS, CloudFormation), Docker, Kubernetes, Helm, Jenkins, Git, Bitbucket, CI/CD</div></div>
+        <div class="skillrow"><div class="k" data-i18n="cv.sk.data">Data & IAM</div><div class="v">PostgreSQL, MongoDB, Oracle, MySQL, Keycloak (OAuth2 / JWT)</div></div>
+        <div class="skillrow"><div class="k" data-i18n="cv.sk.arch">Architecture</div><div class="v">Microservices, Event-driven (SQS/SNS), SOA, REST, Design Patterns, SAFe Agile / Scrum, TDD</div></div>
+      </div>
+
+      <div class="sec">
+        <h2 data-i18n="cv.s.exp">Experience</h2>
+
+        <div class="job">
+          <div class="job-head"><div class="t" data-i18n="cv.j1.t">Applied AI Engineer</div><div class="when">Vaisala · Finland · 2026 — <span data-i18n="cv.present">Present</span></div></div>
+          <div class="co">Vaisala Oyj</div>
+          <ul>
+            <li data-i18n="cv.j1.1">Design and build scalable, secure AI agents and agentic workflows that automate software-development tasks end-to-end — code generation, testing, deployment and maintenance.</li>
+            <li data-i18n="cv.j1.2">Architected a multi-agent system for a microservices platform where agents coordinate, communicate and orchestrate services to improve reliability.</li>
+            <li data-i18n="cv.j1.3">Integrate LLMs through the Model Context Protocol (MCP) and reusable Claude Skills to give agents real tooling and grounded context.</li>
+            <li data-i18n="cv.j1.4">Built a free AI code-review assistant for Bitbucket Server, driven by a single markdown file, producing automated inline pull-request comments.</li>
+            <li data-i18n="cv.j1.5">Bridge AI research and functional business applications; advocate for smaller, specialized, tool-centric AI in engineering.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-head"><div class="t" data-i18n="cv.j2.t">Senior Software Developer</div><div class="when">Vaisala · Finland · 2023 — 2026</div></div>
+          <div class="co">Vaisala Oyj</div>
+          <ul>
+            <li data-i18n="cv.j2.1">Designed and developed secure, high-performance Java 17 / Spring Boot and NestJS microservices for renewable-energy SaaS on AWS and Kubernetes.</li>
+            <li data-i18n="cv.j2.2">Contributed to system architecture and design decisions; implemented security with Spring Security and Keycloak.</li>
+            <li data-i18n="cv.j2.3">Drove code quality through automated testing (JUnit, integration tests), code reviews and CI/CD pipelines.</li>
+            <li data-i18n="cv.j2.4">Mentored junior developers and collaborated with cross-functional teams and non-technical stakeholders.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-head"><div class="t" data-i18n="cv.j3.t">Senior Software Designer / Software Designer / Senior Software Engineer</div><div class="when">Landis+Gyr · Finland & India · 2018 — 2023</div></div>
+          <div class="co">Landis+Gyr Oy</div>
+          <ul>
+            <li data-i18n="cv.j3.1">Served as Scrum Master in a SAFe Agile framework — daily stand-ups, PI planning (ADO, Stormboard) and team alignment.</li>
+            <li data-i18n="cv.j3.2">Delivered across the full SDLC for smart-metering platforms: requirements, design (sequence/component diagrams), development, testing and maintenance.</li>
+            <li data-i18n="cv.j3.3">Worked in a TDD environment with Git, Jira, Jenkins and Gradle; led code reviews and technical documentation.</li>
+            <li data-i18n="cv.j3.4">Mentored developers and supported high-quality delivery through peer review and guidance.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-head"><div class="t" data-i18n="cv.j4.t">Senior Software Engineer / Software Engineer</div><div class="when">ARX Analytics & Advisory · India · 2016 — 2018</div></div>
+          <div class="co">Arx Tech-AXS Pvt. Ltd.</div>
+          <ul>
+            <li data-i18n="cv.j4.1">Designed high-level and low-level architecture as technical architect — technology integration, workflow definition and security layers.</li>
+            <li data-i18n="cv.j4.2">Led development teams, defined technical tasks, mentored developers and aligned delivery with architectural vision.</li>
+            <li data-i18n="cv.j4.3">Bridged communication between developers, project managers and business analysts, translating requirements into technical solutions.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-head"><div class="t" data-i18n="cv.j5.t">Java / J2EE Developer</div><div class="when">Ipseity Group · India · 2013 — 2016</div></div>
+          <div class="co">Ipseity Group</div>
+          <ul>
+            <li data-i18n="cv.j5.1">Participated in all phases of the SDLC — analysis, design, development, testing and deployment — based on functional requirements.</li>
+            <li data-i18n="cv.j5.2">Developed UI components and business logic, integrated multiple frameworks, and resolved post-production issues.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="two">
+        <div class="sec">
+          <h2 data-i18n="cv.s.edu">Education</h2>
+          <div class="job">
+            <div class="job-head"><div class="t" data-i18n="cv.edu.deg">B.Tech, Electronics & Communication Engineering</div></div>
+            <div class="co">Uttar Pradesh Technical University, India</div>
+            <ul><li data-i18n="cv.edu.note">2008 — 2012 · Coursework in embedded systems development.</li></ul>
+          </div>
+        </div>
+        <div class="sec">
+          <h2 data-i18n="cv.s.lang">Languages</h2>
+          <div class="skillrow"><div class="k" data-i18n="cv.l.hi">Hindi</div><div class="v" data-i18n="cv.l.hiv">Native / Bilingual</div></div>
+          <div class="skillrow"><div class="k" data-i18n="cv.l.en">English</div><div class="v" data-i18n="cv.l.env">Full professional</div></div>
+          <div class="skillrow"><div class="k" data-i18n="cv.l.fi">Finnish</div><div class="v" data-i18n="cv.l.fiv">Elementary</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var I18N = {
+      en: {
+        'cv.back': 'Portfolio', 'cv.download': 'Save as PDF', 'cv.title': 'Applied AI Engineer', 'cv.loc': 'Finland', 'cv.present': 'Present',
+        'cv.s.summary': 'Professional Summary',
+        'cv.summary': 'Applied AI Engineer with 13+ years of software engineering experience, now focused on building scalable, secure AI agents and agentic workflows. I design and implement intelligent multi-agent systems that automate complex software-development workflows — from code generation and testing through deployment and maintenance — integrating LLMs via the Model Context Protocol (MCP) and reusable Claude Skills. This builds on deep expertise in Java 17, Spring Boot, NestJS, microservices, AWS and Kubernetes, delivered across renewable energy, smart metering, logistics and real estate. I bridge AI research and functional business applications, advocating for smaller, specialized, tool-centric AI.',
+        'cv.s.skills': 'Core Skills',
+        'cv.sk.ai': 'AI / Agentic', 'cv.sk.lang': 'Languages', 'cv.sk.fw': 'Frameworks', 'cv.sk.cloud': 'Cloud & DevOps', 'cv.sk.data': 'Data & IAM', 'cv.sk.arch': 'Architecture',
+        'cv.s.exp': 'Experience',
+        'cv.j1.t': 'Applied AI Engineer',
+        'cv.j1.1': 'Design and build scalable, secure AI agents and agentic workflows that automate software-development tasks end-to-end — code generation, testing, deployment and maintenance.',
+        'cv.j1.2': 'Architected a multi-agent system for a microservices platform where agents coordinate, communicate and orchestrate services to improve reliability.',
+        'cv.j1.3': 'Integrate LLMs through the Model Context Protocol (MCP) and reusable Claude Skills to give agents real tooling and grounded context.',
+        'cv.j1.4': 'Built a free AI code-review assistant for Bitbucket Server, driven by a single markdown file, producing automated inline pull-request comments.',
+        'cv.j1.5': 'Bridge AI research and functional business applications; advocate for smaller, specialized, tool-centric AI in engineering.',
+        'cv.j2.t': 'Senior Software Developer',
+        'cv.j2.1': 'Designed and developed secure, high-performance Java 17 / Spring Boot and NestJS microservices for renewable-energy SaaS on AWS and Kubernetes.',
+        'cv.j2.2': 'Contributed to system architecture and design decisions; implemented security with Spring Security and Keycloak.',
+        'cv.j2.3': 'Drove code quality through automated testing (JUnit, integration tests), code reviews and CI/CD pipelines.',
+        'cv.j2.4': 'Mentored junior developers and collaborated with cross-functional teams and non-technical stakeholders.',
+        'cv.j3.t': 'Senior Software Designer / Software Designer / Senior Software Engineer',
+        'cv.j3.1': 'Served as Scrum Master in a SAFe Agile framework — daily stand-ups, PI planning (ADO, Stormboard) and team alignment.',
+        'cv.j3.2': 'Delivered across the full SDLC for smart-metering platforms: requirements, design (sequence/component diagrams), development, testing and maintenance.',
+        'cv.j3.3': 'Worked in a TDD environment with Git, Jira, Jenkins and Gradle; led code reviews and technical documentation.',
+        'cv.j3.4': 'Mentored developers and supported high-quality delivery through peer review and guidance.',
+        'cv.j4.t': 'Senior Software Engineer / Software Engineer',
+        'cv.j4.1': 'Designed high-level and low-level architecture as technical architect — technology integration, workflow definition and security layers.',
+        'cv.j4.2': 'Led development teams, defined technical tasks, mentored developers and aligned delivery with architectural vision.',
+        'cv.j4.3': 'Bridged communication between developers, project managers and business analysts, translating requirements into technical solutions.',
+        'cv.j5.t': 'Java / J2EE Developer',
+        'cv.j5.1': 'Participated in all phases of the SDLC — analysis, design, development, testing and deployment — based on functional requirements.',
+        'cv.j5.2': 'Developed UI components and business logic, integrated multiple frameworks, and resolved post-production issues.',
+        'cv.s.edu': 'Education', 'cv.edu.deg': 'B.Tech, Electronics & Communication Engineering', 'cv.edu.note': '2008 — 2012 · Coursework in embedded systems development.',
+        'cv.s.lang': 'Languages', 'cv.l.hi': 'Hindi', 'cv.l.hiv': 'Native / Bilingual', 'cv.l.en': 'English', 'cv.l.env': 'Full professional', 'cv.l.fi': 'Finnish', 'cv.l.fiv': 'Elementary'
+      },
+      fi: {
+        'cv.back': 'Portfolio', 'cv.download': 'Tallenna PDF', 'cv.title': 'Soveltava tekoälyinsinööri', 'cv.loc': 'Suomi', 'cv.present': 'Nykyhetki',
+        'cv.s.summary': 'Ammatillinen yhteenveto',
+        'cv.summary': 'Soveltava tekoälyinsinööri, jolla on yli 13 vuoden ohjelmistokehityskokemus ja joka keskittyy nyt skaalautuvien ja turvallisten tekoälyagenttien ja agenttisten työnkulkujen rakentamiseen. Suunnittelen ja toteutan älykkäitä moniagenttijärjestelmiä, jotka automatisoivat monimutkaisia ohjelmistokehityksen työnkulkuja — koodin generoinnista ja testauksesta käyttöönottoon ja ylläpitoon — integroiden kielimalleja Model Context Protocolin (MCP) ja uudelleenkäytettävien Claude Skills -taitojen kautta. Tämä perustuu vankkaan osaamiseen Java 17:ssä, Spring Bootissa, NestJS:ssä, mikropalveluissa, AWS:ssä ja Kubernetesissa, hankittuna uusiutuvan energian, älykkään mittauksen, logistiikan ja kiinteistöalan parissa. Yhdistän tekoälytutkimuksen ja todelliset liiketoimintasovellukset ja kannatan pienempää, erikoistunutta ja työkalukeskeistä tekoälyä.',
+        'cv.s.skills': 'Ydinosaaminen',
+        'cv.sk.ai': 'Tekoäly / agentit', 'cv.sk.lang': 'Kielet', 'cv.sk.fw': 'Kehykset', 'cv.sk.cloud': 'Pilvi & DevOps', 'cv.sk.data': 'Data & IAM', 'cv.sk.arch': 'Arkkitehtuuri',
+        'cv.s.exp': 'Työkokemus',
+        'cv.j1.t': 'Soveltava tekoälyinsinööri',
+        'cv.j1.1': 'Suunnittelen ja rakennan skaalautuvia ja turvallisia tekoälyagentteja ja agenttisia työnkulkuja, jotka automatisoivat ohjelmistokehityksen tehtäviä päästä päähän — koodin generointi, testaus, käyttöönotto ja ylläpito.',
+        'cv.j1.2': 'Suunnittelin moniagenttijärjestelmän mikropalvelualustalle, jossa agentit koordinoivat, kommunikoivat ja orkestroivat palveluita luotettavuuden parantamiseksi.',
+        'cv.j1.3': 'Integroin kielimalleja Model Context Protocolin (MCP) ja uudelleenkäytettävien Claude Skills -taitojen kautta antaakseni agenteille todellisia työkaluja ja kontekstia.',
+        'cv.j1.4': 'Rakensin ilmaisen tekoälypohjaisen koodikatselmointityökalun Bitbucket Serverille, jota ohjaa yksittäinen markdown-tiedosto ja joka tuottaa automaattisia rivikommentteja pull requesteihin.',
+        'cv.j1.5': 'Yhdistän tekoälytutkimuksen ja todelliset liiketoimintasovellukset; kannatan pienempää, erikoistunutta ja työkalukeskeistä tekoälyä.',
+        'cv.j2.t': 'Vanhempi ohjelmistokehittäjä',
+        'cv.j2.1': 'Suunnittelin ja kehitin turvallisia, suorituskykyisiä Java 17 / Spring Boot- ja NestJS-mikropalveluja uusiutuvan energian SaaS-ratkaisuihin AWS:llä ja Kubernetesilla.',
+        'cv.j2.2': 'Osallistuin järjestelmäarkkitehtuuriin ja suunnittelupäätöksiin; toteutin tietoturvan Spring Securityllä ja Keycloakilla.',
+        'cv.j2.3': 'Varmistin koodin laadun automatisoidulla testauksella (JUnit, integraatiotestit), koodikatselmoinneilla ja CI/CD-putkilla.',
+        'cv.j2.4': 'Mentoroin nuorempia kehittäjiä ja tein yhteistyötä monialaisten tiimien ja ei-teknisten sidosryhmien kanssa.',
+        'cv.j3.t': 'Vanhempi ohjelmistosuunnittelija / Ohjelmistosuunnittelija / Vanhempi ohjelmistoinsinööri',
+        'cv.j3.1': 'Toimin Scrum Masterina SAFe Agile -mallissa — päivittäiset palaverit, PI-suunnittelu (ADO, Stormboard) ja tiimin yhtenäistäminen.',
+        'cv.j3.2': 'Toimitin koko SDLC:n älykkään mittauksen alustoille: vaatimukset, suunnittelu (sekvenssi-/komponenttikaaviot), kehitys, testaus ja ylläpito.',
+        'cv.j3.3': 'Työskentelin TDD-ympäristössä Gitin, Jiran, Jenkinsin ja Gradlen kanssa; johdin koodikatselmointeja ja teknistä dokumentaatiota.',
+        'cv.j3.4': 'Mentoroin kehittäjiä ja tuin laadukasta toimitusta vertaisarvioinnin ja ohjauksen avulla.',
+        'cv.j4.t': 'Vanhempi ohjelmistoinsinööri / Ohjelmistoinsinööri',
+        'cv.j4.1': 'Suunnittelin korkean ja matalan tason arkkitehtuurin teknisenä arkkitehtina — teknologiaintegraatio, työnkulkujen määrittely ja tietoturvakerrokset.',
+        'cv.j4.2': 'Johdin kehitystiimejä, määrittelin tekniset tehtävät, mentoroin kehittäjiä ja yhtenäistin toimituksen arkkitehtuurin kanssa.',
+        'cv.j4.3': 'Toimin kehittäjien, projektipäälliköiden ja liiketoiminta-analyytikoiden välisenä siltana, muuntaen vaatimukset teknisiksi ratkaisuiksi.',
+        'cv.j5.t': 'Java / J2EE -kehittäjä',
+        'cv.j5.1': 'Osallistuin kaikkiin SDLC:n vaiheisiin — analyysi, suunnittelu, kehitys, testaus ja käyttöönotto — toiminnallisten vaatimusten pohjalta.',
+        'cv.j5.2': 'Kehitin käyttöliittymäkomponentteja ja liiketoimintalogiikkaa, integroin useita kehyksiä ja ratkaisin tuotannon jälkeisiä ongelmia.',
+        'cv.s.edu': 'Koulutus', 'cv.edu.deg': 'B.Tech, elektroniikka- ja tietoliikennetekniikka', 'cv.edu.note': '2008 — 2012 · Opintoja sulautettujen järjestelmien kehityksessä.',
+        'cv.s.lang': 'Kielet', 'cv.l.hi': 'Hindi', 'cv.l.hiv': 'Äidinkieli / kaksikielinen', 'cv.l.en': 'Englanti', 'cv.l.env': 'Erinomainen (ammatillinen)', 'cv.l.fi': 'Suomi', 'cv.l.fiv': 'Alkeet'
+      }
+    };
+    function applyLang(lang) {
+      var dict = I18N[lang] || I18N.en;
+      document.documentElement.lang = lang;
+      document.querySelectorAll('[data-i18n]').forEach(function (el) { var k = el.getAttribute('data-i18n'); if (dict[k] != null) el.textContent = dict[k]; });
+      document.querySelectorAll('.lang-toggle button').forEach(function (b) { b.classList.toggle('active', b.getAttribute('data-lang') === lang); });
+      try { localStorage.setItem('lang', lang); } catch (e) {}
+    }
+    var saved = null; try { saved = localStorage.getItem('lang'); } catch (e) {}
+    var initial = saved || ((navigator.language || 'en').toLowerCase().indexOf('fi') === 0 ? 'fi' : 'en');
+    applyLang(initial);
+    document.querySelectorAll('.lang-toggle button').forEach(function (b) { b.addEventListener('click', function () { applyLang(b.getAttribute('data-lang')); }); });
+  </script>
+</body>
+</html>
