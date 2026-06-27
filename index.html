@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ankit Katiyar — Applied AI Engineer</title>
-  <meta name="description" content="Ankit Katiyar — Applied AI Engineer at Vaisala. Building agentic workflows and multi-agent systems on 13+ years of Java & microservices." />
+  <meta name="description" content="Ankit Katiyar — Applied AI Engineer at Vaisala. Building multi-agent software factories running 24×7 on local and AWS EC2." />
   <meta property="og:title" content="Ankit Katiyar — Applied AI Engineer" />
-  <meta property="og:description" content="Building scalable, secure AI agents and agentic workflows. 13+ years of Java & microservices." />
+  <meta property="og:description" content="Multi-agent software factories running 24×7. 13+ years of Java & microservices." />
   <meta property="og:type" content="website" />
   <meta name="theme-color" content="#070912" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23d97757'/%3E%3Cstop offset='0.5' stop-color='%237c5cff'/%3E%3Cstop offset='1' stop-color='%236e9fff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='24' fill='%23070912'/%3E%3Ctext x='50' y='68' font-family='Arial' font-size='52' font-weight='700' text-anchor='middle' fill='url(%23g)'%3EAK%3C/text%3E%3C/svg%3E" />
@@ -15,26 +15,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;450;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg: #070912;
-      --text: #eef1f8;
-      --muted: #9aa3ba;
-      --accent: #d97757;
-      --accent-2: #6e9fff;
-      --accent-3: #9a7cff;
-      --glass: rgba(255, 255, 255, 0.055);
-      --glass-strong: rgba(255, 255, 255, 0.08);
-      --glass-border: rgba(255, 255, 255, 0.12);
-      --glass-hi: rgba(255, 255, 255, 0.22);
-      --radius: 22px;
-      --max: 1120px;
+      --bg: #070912; --text: #eef1f8; --muted: #9aa3ba;
+      --accent: #d97757; --accent-2: #6e9fff; --accent-3: #9a7cff; --live: #34d399;
+      --glass: rgba(255,255,255,0.055); --glass-strong: rgba(255,255,255,0.08);
+      --glass-border: rgba(255,255,255,0.12); --glass-hi: rgba(255,255,255,0.22);
+      --radius: 22px; --max: 1140px;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Inter', system-ui, sans-serif;
-      background: var(--bg); color: var(--text); line-height: 1.65;
-      -webkit-font-smoothing: antialiased; overflow-x: hidden; position: relative;
-    }
+    body { font-family: 'Inter', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
     a { color: inherit; text-decoration: none; }
     ::selection { background: var(--accent-3); color: #fff; }
 
@@ -44,32 +33,16 @@
     .b2 { width: 42vw; height: 42vw; background: #6e9fff; top: 8%; right: -10%; animation: drift2 26s ease-in-out infinite; }
     .b3 { width: 46vw; height: 46vw; background: #d97757; bottom: -16%; left: 18%; opacity: 0.42; animation: drift3 30s ease-in-out infinite; }
     .b4 { width: 30vw; height: 30vw; background: #2dd4bf; bottom: 6%; right: 14%; opacity: 0.28; animation: drift1 28s ease-in-out infinite reverse; }
-    @keyframes drift1 { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(8vw, 6vh) scale(1.12); } }
-    @keyframes drift2 { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(-7vw, 8vh) scale(0.9); } }
-    @keyframes drift3 { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(6vw, -7vh) scale(1.1); } }
-    .veil { position: fixed; inset: 0; z-index: -1; background:
-        radial-gradient(120% 80% at 50% 0%, rgba(7,9,18,0.2), rgba(7,9,18,0.82) 70%),
-        linear-gradient(180deg, rgba(7,9,18,0.4), rgba(7,9,18,0.7)); }
-    .grain { position: fixed; inset: 0; z-index: -1; opacity: 0.04; pointer-events: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+    @keyframes drift1 { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(8vw,6vh) scale(1.12); } }
+    @keyframes drift2 { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(-7vw,8vh) scale(0.9); } }
+    @keyframes drift3 { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(6vw,-7vh) scale(1.1); } }
+    .veil { position: fixed; inset: 0; z-index: -1; background: radial-gradient(120% 80% at 50% 0%, rgba(7,9,18,0.2), rgba(7,9,18,0.82) 70%), linear-gradient(180deg, rgba(7,9,18,0.4), rgba(7,9,18,0.7)); }
 
     .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
-
-    .glass {
-      background: var(--glass);
-      backdrop-filter: blur(22px) saturate(170%); -webkit-backdrop-filter: blur(22px) saturate(170%);
-      border: 1px solid var(--glass-border);
-      box-shadow: inset 0 1px 0 var(--glass-hi), inset 0 -1px 0 rgba(0,0,0,0.25), 0 18px 50px rgba(0,0,0,0.4);
-      border-radius: var(--radius);
-    }
+    .glass { background: var(--glass); backdrop-filter: blur(22px) saturate(170%); -webkit-backdrop-filter: blur(22px) saturate(170%); border: 1px solid var(--glass-border); box-shadow: inset 0 1px 0 var(--glass-hi), inset 0 -1px 0 rgba(0,0,0,0.25), 0 18px 50px rgba(0,0,0,0.4); border-radius: var(--radius); }
 
     nav { position: sticky; top: 14px; z-index: 50; margin: 14px auto 0; max-width: var(--max); padding: 0 24px; }
-    .nav-inner {
-      display: flex; align-items: center; justify-content: space-between; gap: 16px;
-      height: 60px; padding: 0 18px 0 22px; border-radius: 18px;
-      background: rgba(12,15,26,0.55); backdrop-filter: blur(20px) saturate(160%); -webkit-backdrop-filter: blur(20px) saturate(160%);
-      border: 1px solid var(--glass-border); box-shadow: inset 0 1px 0 var(--glass-hi), 0 10px 30px rgba(0,0,0,0.35);
-    }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 60px; padding: 0 18px 0 22px; border-radius: 18px; background: rgba(12,15,26,0.55); backdrop-filter: blur(20px) saturate(160%); -webkit-backdrop-filter: blur(20px) saturate(160%); border: 1px solid var(--glass-border); box-shadow: inset 0 1px 0 var(--glass-hi), 0 10px 30px rgba(0,0,0,0.35); }
     .logo { font-family: 'Space Grotesk'; font-weight: 700; font-size: 1.08rem; letter-spacing: -0.02em; white-space: nowrap; }
     .logo span { background: linear-gradient(110deg, var(--accent), var(--accent-3)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
     .nav-links { display: flex; gap: 24px; font-size: 0.92rem; }
@@ -79,105 +52,139 @@
     .lang-toggle { display: inline-flex; padding: 3px; border-radius: 999px; background: rgba(255,255,255,0.06); border: 1px solid var(--glass-border); }
     .lang-toggle button { font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; font-weight: 500; color: var(--muted); background: none; border: none; cursor: pointer; padding: 5px 11px; border-radius: 999px; transition: color 0.2s, background 0.2s; }
     .lang-toggle button.active { color: #fff; background: linear-gradient(110deg, var(--accent), var(--accent-3)); }
-    @media (max-width: 820px) { .nav-links { display: none; } }
+    @media (max-width: 860px) { .nav-links { display: none; } }
 
-    header { padding: 96px 0 70px; }
-    .hero-grid { display: grid; grid-template-columns: 1.4fr 0.9fr; gap: 36px; align-items: center; }
-    @media (max-width: 880px) { .hero-grid { grid-template-columns: 1fr; } }
-    .eyebrow {
-      display: inline-flex; align-items: center; gap: 9px;
-      font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: #f1d9cf;
-      padding: 8px 16px; border-radius: 999px; margin-bottom: 26px;
-      background: var(--glass); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
-      border: 1px solid var(--glass-border); box-shadow: inset 0 1px 0 var(--glass-hi);
-    }
+    header { padding: 80px 0 30px; }
+    .hero-grid { display: grid; grid-template-columns: 1.25fr 0.95fr; gap: 34px; align-items: center; }
+    @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; } }
+    .eyebrow { display: inline-flex; align-items: center; gap: 9px; font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: #f1d9cf; padding: 8px 16px; border-radius: 999px; margin-bottom: 24px; background: var(--glass); border: 1px solid var(--glass-border); box-shadow: inset 0 1px 0 var(--glass-hi); }
     .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 12px 2px var(--accent); animation: pulse 2s infinite; }
-    @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.35; } }
-    h1 { font-family: 'Space Grotesk'; font-weight: 700; font-size: clamp(2.5rem, 6.5vw, 4.7rem); line-height: 1.05; letter-spacing: -0.035em; margin-bottom: 22px; }
+    @keyframes pulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(0.8); } }
+    h1 { font-family: 'Space Grotesk'; font-weight: 700; font-size: clamp(2.5rem, 6vw, 4.4rem); line-height: 1.04; letter-spacing: -0.035em; margin-bottom: 18px; }
     h1 .grad { background: linear-gradient(110deg, var(--accent), var(--accent-3) 55%, var(--accent-2)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
-    .lead { font-size: clamp(1.05rem, 2.1vw, 1.28rem); color: var(--muted); max-width: 600px; margin-bottom: 34px; }
-    .cta { display: flex; gap: 13px; flex-wrap: wrap; }
-    .btn { display: inline-flex; align-items: center; gap: 9px; padding: 13px 22px; border-radius: 14px; font-weight: 600; font-size: 0.95rem; transition: transform 0.18s, box-shadow 0.25s, background 0.2s; cursor: pointer; }
+    .lead { font-size: clamp(1rem, 2vw, 1.2rem); color: var(--muted); max-width: 540px; margin-bottom: 28px; }
+    .cta { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn { display: inline-flex; align-items: center; gap: 9px; padding: 13px 22px; border-radius: 14px; font-weight: 600; font-size: 0.95rem; transition: transform 0.18s, box-shadow 0.25s; cursor: pointer; }
     .btn-primary { background: linear-gradient(110deg, var(--accent), var(--accent-3)); color: #fff; box-shadow: 0 10px 28px rgba(124,92,255,0.4); }
     .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(124,92,255,0.55); }
-    .btn-glass { background: var(--glass-strong); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border: 1px solid var(--glass-border); box-shadow: inset 0 1px 0 var(--glass-hi); color: var(--text); }
+    .btn-glass { background: var(--glass-strong); border: 1px solid var(--glass-border); box-shadow: inset 0 1px 0 var(--glass-hi); color: var(--text); }
     .btn-glass:hover { transform: translateY(-3px); border-color: rgba(255,255,255,0.3); }
 
-    .hero-card { padding: 28px; }
-    .hero-card .av { width: 64px; height: 64px; border-radius: 18px; margin-bottom: 18px; background: linear-gradient(135deg, var(--accent), var(--accent-3)); display: grid; place-items: center; font-family: 'Space Grotesk'; font-weight: 700; font-size: 1.5rem; color: #fff; box-shadow: 0 8px 24px rgba(124,92,255,0.45); }
-    .hero-card .name { font-family: 'Space Grotesk'; font-weight: 600; font-size: 1.2rem; }
-    .hero-card .title { color: var(--accent-2); font-size: 0.9rem; margin-bottom: 18px; }
-    .stat-row { display: flex; gap: 10px; }
-    .stat { flex: 1; text-align: center; padding: 14px 8px; border-radius: 14px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); }
-    .stat .n { font-family: 'Space Grotesk'; font-weight: 700; font-size: 1.5rem; background: linear-gradient(110deg, var(--accent-2), var(--accent-3)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
-    .stat .l { font-size: 0.72rem; color: var(--muted); margin-top: 2px; }
+    /* live factory status card */
+    .status-card { padding: 24px; }
+    .status-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px; }
+    .status-top .st-title { font-family: 'Space Grotesk'; font-weight: 600; font-size: 1.05rem; }
+    .live-pill { display: inline-flex; align-items: center; gap: 7px; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: var(--live); padding: 5px 11px; border-radius: 999px; background: rgba(52,211,153,0.1); border: 1px solid rgba(52,211,153,0.3); }
+    .livedot { width: 8px; height: 8px; border-radius: 50%; background: var(--live); box-shadow: 0 0 10px 1px var(--live); animation: pulse 1.6s infinite; }
+    .env-row { display: flex; align-items: center; justify-content: space-between; padding: 13px 16px; border-radius: 14px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); margin-bottom: 10px; }
+    .env-row .env { display: flex; align-items: center; gap: 11px; font-size: 0.92rem; font-weight: 500; }
+    .env-row .env .ei { width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center; font-size: 1.1rem; background: rgba(255,255,255,0.06); border: 1px solid var(--glass-border); }
+    .env-row .ok { display: inline-flex; align-items: center; gap: 6px; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: var(--live); }
+    .meter { margin-top: 4px; }
+    .meter .ml { display: flex; justify-content: space-between; font-size: 0.74rem; color: var(--muted); margin-bottom: 6px; }
+    .bars { display: flex; gap: 4px; height: 30px; align-items: flex-end; }
+    .bars i { flex: 1; background: linear-gradient(180deg, var(--accent-2), var(--accent-3)); border-radius: 3px; opacity: 0.85; animation: eq 1.2s ease-in-out infinite; }
+    @keyframes eq { 0%,100% { height: 30%; } 50% { height: 100%; } }
 
-    section { padding: 66px 0; }
-    .section-head { margin-bottom: 40px; }
-    .kicker { font-family: 'JetBrains Mono', monospace; color: var(--accent-2); font-size: 0.8rem; letter-spacing: 0.06em; }
-    .section-head h2 { font-family: 'Space Grotesk'; font-weight: 700; font-size: clamp(1.8rem, 4vw, 2.6rem); letter-spacing: -0.025em; margin-top: 8px; }
+    /* metric counters */
+    .metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 40px; }
+    @media (max-width: 720px) { .metrics { grid-template-columns: repeat(2, 1fr); } }
+    .metric { padding: 22px 18px; text-align: center; }
+    .metric .n { font-family: 'Space Grotesk'; font-weight: 700; font-size: clamp(1.9rem, 4vw, 2.6rem); line-height: 1; background: linear-gradient(110deg, var(--accent-2), var(--accent-3)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    .metric .l { font-size: 0.8rem; color: var(--muted); margin-top: 8px; }
 
-    .grid { display: grid; gap: 18px; }
-    .focus-grid { grid-template-columns: repeat(auto-fit, minmax(248px, 1fr)); }
-    .card { padding: 26px; transition: transform 0.25s, box-shadow 0.3s, border-color 0.25s; }
+    section { padding: 60px 0; }
+    .section-head { margin-bottom: 34px; }
+    .kicker { font-family: 'JetBrains Mono', monospace; color: var(--accent-2); font-size: 0.76rem; letter-spacing: 0.14em; text-transform: uppercase; }
+    .section-head h2 { font-family: 'Space Grotesk'; font-weight: 700; font-size: clamp(1.7rem, 4vw, 2.5rem); letter-spacing: -0.025em; margin-top: 8px; }
+    .section-head p { color: var(--muted); margin-top: 6px; font-size: 0.98rem; }
+
+    /* software factory diagram */
+    .factory-panel { padding: 34px 28px; }
+    .runtime { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 30px; }
+    .rchip { display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px; border-radius: 999px; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); font-size: 0.9rem; font-weight: 500; }
+    .rchip .live-mini { display: inline-flex; align-items: center; gap: 6px; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--live); }
+    .pipeline { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 6px; }
+    .fnode { width: 116px; padding: 16px 8px; text-align: center; border-radius: 16px; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); box-shadow: inset 0 1px 0 rgba(255,255,255,0.12); transition: transform 0.2s, border-color 0.2s, box-shadow 0.3s; }
+    .fnode:hover { transform: translateY(-5px); border-color: var(--accent-3); box-shadow: 0 16px 36px rgba(124,92,255,0.25); }
+    .fnode .e { font-size: 1.7rem; }
+    .fnode .l { font-family: 'Space Grotesk'; font-size: 0.82rem; font-weight: 600; margin-top: 7px; }
+    .fnode .s { font-size: 0.66rem; color: var(--muted); margin-top: 2px; }
+    .fconn { width: 34px; height: 3px; border-radius: 3px; background: linear-gradient(90deg, rgba(110,159,255,0.25), rgba(154,124,255,0.6)); position: relative; overflow: hidden; }
+    .fconn::after { content: ""; position: absolute; top: 0; left: -40%; width: 40%; height: 100%; background: linear-gradient(90deg, transparent, var(--live), transparent); animation: flow 1.8s linear infinite; }
+    @keyframes flow { to { left: 110%; } }
+    @media (max-width: 760px) { .fconn { width: 18px; transform: none; } .fnode { width: 92px; } }
+
+    /* career pipeline */
+    .career { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 6px; }
+    .cnode { width: 152px; padding: 16px 13px; border-radius: 16px; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); box-shadow: inset 0 1px 0 rgba(255,255,255,0.12); transition: transform .2s, border-color .2s, box-shadow .3s; }
+    .cnode:hover { transform: translateY(-5px); border-color: var(--accent-3); box-shadow: 0 16px 36px rgba(124,92,255,0.25); }
+    .cnode .yr { font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: var(--accent-2); }
+    .cnode .cr { font-family: 'Space Grotesk'; font-weight: 600; font-size: 0.9rem; margin-top: 6px; line-height: 1.25; }
+    .cnode .cc { font-size: 0.72rem; color: var(--muted); margin-top: 4px; }
+    .cnode.now { border-color: var(--accent); background: linear-gradient(160deg, rgba(217,119,87,0.18), rgba(124,92,255,0.12)); box-shadow: inset 0 1px 0 rgba(255,255,255,0.18), 0 0 34px rgba(217,119,87,0.22); }
+    .cnode .nowtag { display: inline-flex; align-items: center; gap: 6px; font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; letter-spacing: 0.08em; color: var(--live); margin-top: 9px; }
+    @media (max-width: 760px) { .cnode { width: 134px; } }
+
+    /* what I do cards */
+    .grid { display: grid; gap: 16px; }
+    .do-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+    .card { padding: 24px; transition: transform 0.25s, box-shadow 0.3s, border-color 0.25s; }
     .card:hover { transform: translateY(-6px); border-color: rgba(255,255,255,0.26); box-shadow: inset 0 1px 0 var(--glass-hi), 0 26px 60px rgba(0,0,0,0.5), 0 0 40px rgba(124,92,255,0.18); }
-    .card .ico { width: 46px; height: 46px; border-radius: 13px; display: grid; place-items: center; font-size: 1.4rem; margin-bottom: 16px; background: rgba(255,255,255,0.06); border: 1px solid var(--glass-border); }
-    .card h3 { font-family: 'Space Grotesk'; font-size: 1.13rem; margin-bottom: 8px; }
-    .card p { color: var(--muted); font-size: 0.94rem; }
+    .card .ico { width: 48px; height: 48px; border-radius: 13px; display: grid; place-items: center; font-size: 1.5rem; margin-bottom: 14px; background: rgba(255,255,255,0.06); border: 1px solid var(--glass-border); }
+    .card h3 { font-family: 'Space Grotesk'; font-size: 1.08rem; }
+    .card p { color: var(--muted); font-size: 0.88rem; margin-top: 5px; }
 
-    .about-panel { padding: 34px; }
-    .about-text { font-size: 1.08rem; color: #cbd1e2; max-width: 800px; }
-    .about-text strong { color: var(--text); }
+    /* tech logos */
+    .ai-row { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 22px; }
+    .ai-chip { display: inline-flex; align-items: center; gap: 8px; font-size: 0.88rem; font-weight: 600; padding: 9px 16px; border-radius: 12px; background: linear-gradient(110deg, rgba(217,119,87,0.16), rgba(124,92,255,0.16)); border: 1px solid rgba(154,124,255,0.35); }
+    .logos { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
+    @media (max-width: 760px) { .logos { grid-template-columns: repeat(3, 1fr); } }
+    .logo-tile { aspect-ratio: 1.4; display: grid; place-items: center; gap: 6px; border-radius: 14px; background: rgba(255,255,255,0.04); border: 1px solid var(--glass-border); transition: transform 0.18s, border-color 0.2s, background 0.2s; }
+    .logo-tile:hover { transform: translateY(-4px); border-color: var(--accent-2); background: rgba(110,159,255,0.08); }
+    .logo-tile img { width: 34px; height: 34px; object-fit: contain; }
+    .logo-tile .lf { display: none; font-family: 'Space Grotesk'; font-weight: 700; font-size: 0.85rem; color: var(--accent); }
+    .logo-tile .cap { font-size: 0.68rem; color: var(--muted); }
 
-    .skills-panel { padding: 32px; }
-    .skill-group { margin-bottom: 24px; }
-    .skill-group:last-child { margin-bottom: 0; }
-    .skill-group h4 { font-family: 'JetBrains Mono', monospace; color: var(--muted); font-size: 0.8rem; margin-bottom: 13px; text-transform: uppercase; letter-spacing: 0.09em; }
-    .tags { display: flex; flex-wrap: wrap; gap: 10px; }
-    .tag { font-size: 0.87rem; padding: 8px 15px; border-radius: 11px; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); color: #d3d8e6; box-shadow: inset 0 1px 0 rgba(255,255,255,0.08); transition: transform 0.16s, border-color 0.2s, color 0.2s, background 0.2s; }
-    .tag:hover { transform: translateY(-3px); border-color: var(--accent-2); color: #fff; background: rgba(110,159,255,0.14); }
+    /* compact timeline */
+    .xp { display: grid; gap: 12px; }
+    .xp-row { display: grid; grid-template-columns: 56px 1fr auto; align-items: center; gap: 16px; padding: 16px 20px; transition: transform 0.2s, border-color 0.2s; }
+    .xp-row:hover { transform: translateX(5px); border-color: rgba(255,255,255,0.26); }
+    .xp-badge { width: 56px; height: 56px; border-radius: 14px; display: grid; place-items: center; font-family: 'Space Grotesk'; font-weight: 700; font-size: 0.95rem; color: #fff; background: linear-gradient(135deg, var(--accent), var(--accent-3)); }
+    .xp-mid .r { font-family: 'Space Grotesk'; font-weight: 600; font-size: 1rem; }
+    .xp-mid .c { color: var(--accent-2); font-size: 0.85rem; }
+    .xp-when { font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: var(--muted); white-space: nowrap; }
+    @media (max-width: 620px) { .xp-row { grid-template-columns: 46px 1fr; } .xp-when { grid-column: 2; } .xp-badge { width: 46px; height: 46px; } }
 
-    .timeline { position: relative; padding-left: 30px; }
-    .timeline::before { content: ""; position: absolute; left: 7px; top: 8px; bottom: 8px; width: 2px; background: linear-gradient(var(--accent), var(--accent-3), transparent); }
-    .tl-item { position: relative; padding: 0 0 18px; margin-bottom: 16px; }
-    .tl-item:last-child { margin-bottom: 0; }
-    .tl-item::before { content: ""; position: absolute; left: -29px; top: 22px; width: 14px; height: 14px; border-radius: 50%; background: var(--bg); border: 2px solid var(--accent); box-shadow: 0 0 12px rgba(217,119,87,0.6); }
-    .tl-card { padding: 20px 24px; }
-    .tl-item .role { font-family: 'Space Grotesk'; font-weight: 600; font-size: 1.08rem; }
-    .tl-item .co { color: var(--accent-2); font-size: 0.92rem; }
-    .tl-item .when { font-family: 'JetBrains Mono', monospace; color: var(--muted); font-size: 0.8rem; margin: 5px 0 9px; }
-    .tl-item .desc { color: var(--muted); font-size: 0.93rem; }
-
-    .posts { display: grid; gap: 15px; }
-    .post { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 22px 26px; transition: transform 0.22s, border-color 0.2s, box-shadow 0.3s; }
+    /* writing */
+    .posts { display: grid; gap: 13px; }
+    .post { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 20px 24px; transition: transform 0.22s, border-color 0.2s, box-shadow 0.3s; }
     .post:hover { transform: translateX(6px); border-color: rgba(255,255,255,0.26); box-shadow: inset 0 1px 0 var(--glass-hi), 0 20px 44px rgba(0,0,0,0.45); }
-    .post h3 { font-family: 'Space Grotesk'; font-size: 1.04rem; font-weight: 600; }
+    .post h3 { font-family: 'Space Grotesk'; font-size: 1rem; font-weight: 600; }
     .post .arrow { color: var(--accent); font-size: 1.35rem; flex-shrink: 0; transition: transform 0.2s; }
     .post:hover .arrow { transform: translateX(4px); }
 
-    .contact-panel { padding: 64px 40px; text-align: center; }
-    .contact-panel h2 { font-family: 'Space Grotesk'; font-size: clamp(2rem, 5vw, 3rem); letter-spacing: -0.025em; margin-bottom: 14px; }
-    .contact-panel p { color: var(--muted); max-width: 460px; margin: 0 auto 30px; font-size: 1.05rem; }
+    .contact-panel { padding: 60px 40px; text-align: center; }
+    .contact-panel h2 { font-family: 'Space Grotesk'; font-size: clamp(1.9rem, 5vw, 2.9rem); letter-spacing: -0.025em; margin-bottom: 12px; }
+    .contact-panel p { color: var(--muted); max-width: 440px; margin: 0 auto 28px; }
     .socials { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
-
-    footer { padding: 40px 0 50px; text-align: center; color: var(--muted); font-size: 0.85rem; }
+    footer { padding: 36px 0 48px; text-align: center; color: var(--muted); font-size: 0.84rem; }
 
     .js .reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.7s cubic-bezier(.2,.7,.2,1), transform 0.7s cubic-bezier(.2,.7,.2,1); }
     .js .reveal.in { opacity: 1; transform: none; }
-    @media (prefers-reduced-motion: reduce) { .js .reveal { opacity: 1 !important; transform: none !important; } .blob { animation: none !important; } }
+    @media (prefers-reduced-motion: reduce) { .js .reveal { opacity: 1 !important; transform: none !important; } .blob, .fconn::after, .bars i, .livedot, .dot { animation: none !important; } }
   </style>
 </head>
 <body>
   <div class="aurora"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="blob b4"></div></div>
   <div class="veil"></div>
-  <div class="grain"></div>
 
   <nav>
     <div class="nav-inner">
       <div class="logo">Ankit<span>.</span>Katiyar</div>
       <div class="nav-links">
-        <a href="#about" data-i18n="nav.about">About</a>
-        <a href="#skills" data-i18n="nav.skills">Skills</a>
+        <a href="#factory" data-i18n="nav.factory">Factories</a>
+        <a href="#stack" data-i18n="nav.skills">Stack</a>
         <a href="#experience" data-i18n="nav.experience">Experience</a>
         <a href="#writing" data-i18n="nav.writing">Writing</a>
         <a href="resume.html" data-i18n="nav.resume">Resume</a>
@@ -195,108 +202,113 @@
     <div class="wrap hero-grid">
       <div>
         <div class="eyebrow"><span class="dot"></span> <span data-i18n="hero.eyebrow">Applied AI Engineer · Vaisala · Finland</span></div>
-        <h1 data-i18n-html="hero.h1">Architecting <span class="grad">with AI</span>,<br>not just using it.</h1>
-        <p class="lead" data-i18n="hero.lead">I build scalable, secure AI agents and agentic workflows — bridging the gap between AI research and real business applications, on 13+ years of Java &amp; microservices engineering.</p>
+        <h1 data-i18n-html="hero.h1">I build <span class="grad">software factories</span> that run themselves.</h1>
+        <p class="lead" data-i18n="hero.lead">Multi-agent AI factories that ship production code 24×7 — running locally and on AWS EC2. Backed by 13+ years of Java &amp; microservices.</p>
         <div class="cta">
           <a class="btn btn-primary" href="#contact" data-i18n="btn.getintouch">Get in touch →</a>
           <a class="btn btn-glass" href="Ankit_Katiyar_CV.pdf" download data-i18n="btn.cv">Download CV</a>
           <a class="btn btn-glass" href="https://github.com/ankitkatiyar567" target="_blank" rel="noopener">GitHub</a>
         </div>
       </div>
-      <div class="glass hero-card reveal">
-        <div class="av">AK</div>
-        <div class="name">Ankit Katiyar</div>
-        <div class="title" data-i18n="herocard.title">Applied AI Engineer @ Vaisala</div>
-        <div class="stat-row">
-          <div class="stat"><div class="n">13+</div><div class="l" data-i18n="stat.years">Years exp.</div></div>
-          <div class="stat"><div class="n">5</div><div class="l" data-i18n="stat.companies">Companies</div></div>
-          <div class="stat"><div class="n">∞</div><div class="l" data-i18n="stat.agents">Agents shipped</div></div>
+
+      <div class="glass status-card reveal">
+        <div class="status-top">
+          <div class="st-title" data-i18n="status.title">Software Factory</div>
+          <div class="live-pill"><span class="livedot"></span> <span data-i18n="status.live">RUNNING 24×7</span></div>
         </div>
+        <div class="env-row">
+          <div class="env"><span class="ei">💻</span> <span data-i18n="status.local">Local cluster</span></div>
+          <span class="ok"><span class="livedot"></span> ONLINE</span>
+        </div>
+        <div class="env-row">
+          <div class="env"><span class="ei">☁️</span> AWS EC2</div>
+          <span class="ok"><span class="livedot"></span> ONLINE</span>
+        </div>
+        <div class="meter">
+          <div class="ml"><span data-i18n="status.agents">Agents active</span><span>6 / 6</span></div>
+          <div class="bars"><i style="animation-delay:0s"></i><i style="animation-delay:.15s"></i><i style="animation-delay:.3s"></i><i style="animation-delay:.45s"></i><i style="animation-delay:.6s"></i><i style="animation-delay:.75s"></i><i style="animation-delay:.9s"></i><i style="animation-delay:1.05s"></i><i style="animation-delay:1.2s"></i><i style="animation-delay:.5s"></i><i style="animation-delay:.2s"></i><i style="animation-delay:.7s"></i></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <div class="metrics">
+        <div class="glass metric reveal"><div class="n" data-count="13" data-suffix="+">13+</div><div class="l" data-i18n="m.years">Years building software</div></div>
+        <div class="glass metric reveal"><div class="n">24×7</div><div class="l" data-i18n="m.uptime">Factories running</div></div>
+        <div class="glass metric reveal"><div class="n" data-count="6">6</div><div class="l" data-i18n="m.agents">AI agents per factory</div></div>
+        <div class="glass metric reveal"><div class="n" data-count="5">5</div><div class="l" data-i18n="m.companies">Companies shipped for</div></div>
       </div>
     </div>
   </header>
 
-  <section id="about">
+  <section id="factory">
     <div class="wrap">
       <div class="section-head reveal">
-        <div class="kicker" data-i18n="about.kicker">// about</div>
-        <h2 data-i18n="about.h2">From microservices to multi-agent systems</h2>
+        <div class="kicker" data-i18n="factory.kicker">What I'm building now</div>
+        <h2 data-i18n="factory.h2">Autonomous software factories</h2>
+        <p data-i18n="factory.sub">A team of AI agents takes a requirement and ships a reviewed pull request — end to end, around the clock.</p>
       </div>
-      <div class="glass about-panel reveal">
-        <p class="about-text" data-i18n-html="about.text">
-          I'm an <strong>Applied AI Engineer at Vaisala</strong>, designing intelligent
-          <strong>multi-agent systems</strong> that automate complex software-development workflows —
-          from code generation and testing through deployment and maintenance. I built a multi-agent
-          setup for a microservices architecture where agents coordinate, communicate and orchestrate
-          processes to improve system reliability. That work stands on <strong>13+ years</strong> of
-          shipping production Java and microservice platforms across renewable energy, smart metering,
-          logistics and real estate.
-        </p>
-      </div>
-      <div class="grid focus-grid" style="margin-top: 18px;">
-        <div class="glass card reveal">
-          <div class="ico">🤖</div>
-          <h3 data-i18n="focus.1.h">Agentic Workflows</h3>
-          <p data-i18n="focus.1.p">Autonomous, tool-using agents that coordinate to ship and maintain software end-to-end.</p>
+      <div class="glass factory-panel reveal">
+        <div class="runtime">
+          <span class="rchip">💻 <span data-i18n="factory.localrun">Running locally</span> <span class="live-mini"><span class="livedot"></span> LIVE</span></span>
+          <span class="rchip">☁️ <span data-i18n="factory.awsrun">AWS EC2 · 24×7</span> <span class="live-mini"><span class="livedot"></span> LIVE</span></span>
         </div>
-        <div class="glass card reveal">
-          <div class="ico">🧩</div>
-          <h3 data-i18n="focus.2.h">MCP &amp; Claude Skills</h3>
-          <p data-i18n="focus.2.p">Model Context Protocol integrations and reusable skills that give agents real capabilities.</p>
-        </div>
-        <div class="glass card reveal">
-          <div class="ico">🏗️</div>
-          <h3 data-i18n="focus.3.h">Microservices at scale</h3>
-          <p data-i18n="focus.3.p">Java 17, Spring Boot &amp; NestJS on AWS and Kubernetes — secure, tested, production-grade.</p>
+        <div class="pipeline">
+          <div class="fnode"><div class="e">📋</div><div class="l" data-i18n="f.req">Requirement</div><div class="s" data-i18n="f.req.s">Jira / ticket</div></div>
+          <div class="fconn"></div>
+          <div class="fnode"><div class="e">🧑‍💼</div><div class="l" data-i18n="f.po">Product Owner</div><div class="s">AC + scope</div></div>
+          <div class="fconn"></div>
+          <div class="fnode"><div class="e">🏛️</div><div class="l" data-i18n="f.arch">Architect</div><div class="s" data-i18n="f.arch.s">Design</div></div>
+          <div class="fconn"></div>
+          <div class="fnode"><div class="e">⌨️</div><div class="l" data-i18n="f.dev">Developer</div><div class="s" data-i18n="f.dev.s">Code</div></div>
+          <div class="fconn"></div>
+          <div class="fnode"><div class="e">🧪</div><div class="l">QA</div><div class="s" data-i18n="f.qa.s">Tests</div></div>
+          <div class="fconn"></div>
+          <div class="fnode"><div class="e">🔍</div><div class="l" data-i18n="f.rev">Reviewer</div><div class="s" data-i18n="f.rev.s">Verify</div></div>
+          <div class="fconn"></div>
+          <div class="fnode"><div class="e">🚀</div><div class="l" data-i18n="f.ship">Shipped PR</div><div class="s" data-i18n="f.ship.s">Merged</div></div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="skills">
+  <section id="do">
+    <div class="wrap">
+      <div class="grid do-grid">
+        <div class="glass card reveal"><div class="ico">🤖</div><h3 data-i18n="do.1.h">Agentic Workflows</h3><p data-i18n="do.1.p">Tool-using agents that coordinate end-to-end.</p></div>
+        <div class="glass card reveal"><div class="ico">🧩</div><h3 data-i18n="do.2.h">MCP &amp; Claude Skills</h3><p data-i18n="do.2.p">Real tooling &amp; context for agents.</p></div>
+        <div class="glass card reveal"><div class="ico">☁️</div><h3 data-i18n="do.3.h">24×7 on AWS</h3><p data-i18n="do.3.p">Always-on factories on EC2 &amp; local.</p></div>
+        <div class="glass card reveal"><div class="ico">🏗️</div><h3 data-i18n="do.4.h">Microservices</h3><p data-i18n="do.4.p">Java 17, Spring Boot, Kubernetes.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="stack">
     <div class="wrap">
       <div class="section-head reveal">
-        <div class="kicker" data-i18n="skills.kicker">// toolbox</div>
-        <h2 data-i18n="skills.h2">Skills &amp; technologies</h2>
+        <div class="kicker" data-i18n="stack.kicker">Toolbox</div>
+        <h2 data-i18n="stack.h2">Stack</h2>
       </div>
-      <div class="glass skills-panel reveal">
-        <div class="skill-group">
-          <h4 data-i18n="skills.g1">AI / Agentic</h4>
-          <div class="tags">
-            <span class="tag">Agentic Workflows</span>
-            <span class="tag">Model Context Protocol (MCP)</span>
-            <span class="tag">Claude Skills</span>
-            <span class="tag">Multi-Agent Systems</span>
-            <span class="tag">LLM Orchestration</span>
-          </div>
+      <div class="reveal">
+        <div class="ai-row">
+          <span class="ai-chip">🤖 Agentic Workflows</span>
+          <span class="ai-chip">🧩 MCP</span>
+          <span class="ai-chip">✦ Claude Skills</span>
+          <span class="ai-chip">🕸️ Multi-Agent Systems</span>
         </div>
-        <div class="skill-group">
-          <h4 data-i18n="skills.g2">Languages &amp; Frameworks</h4>
-          <div class="tags">
-            <span class="tag">Java 17</span>
-            <span class="tag">Spring Boot</span>
-            <span class="tag">Spring Security</span>
-            <span class="tag">Hibernate</span>
-            <span class="tag">NestJS</span>
-            <span class="tag">Angular</span>
-            <span class="tag">TypeScript</span>
-            <span class="tag">Python</span>
-          </div>
-        </div>
-        <div class="skill-group">
-          <h4 data-i18n="skills.g3">Cloud, DevOps &amp; Data</h4>
-          <div class="tags">
-            <span class="tag">AWS</span>
-            <span class="tag">Kubernetes</span>
-            <span class="tag">Docker</span>
-            <span class="tag">Jenkins (CI/CD)</span>
-            <span class="tag">Keycloak</span>
-            <span class="tag">Apache Camel / NiFi</span>
-            <span class="tag">ActiveMQ</span>
-            <span class="tag">PostgreSQL</span>
-            <span class="tag">MongoDB</span>
-            <span class="tag">Git / Bitbucket</span>
-          </div>
+        <div class="logos">
+          <div class="glass logo-tile"><img alt="Java" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="lf">Java</span><span class="cap">Java 17</span></div>
+          <div class="glass logo-tile"><img alt="Spring" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="lf">Spring</span><span class="cap">Spring Boot</span></div>
+          <div class="glass logo-tile"><img alt="NestJS" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-original.svg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="lf">Nest</span><span class="cap">NestJS</span></div>
+          <div class="glass logo-tile"><img alt="TypeScript" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="lf">TS</span><span class="cap">TypeScript</span></div>
+          <div class="glass logo-tile"><img alt="Python" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="lf">Py</span><span class="cap">Python</span></div>
+          <div class="glass logo-tile"><img alt="AWS" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="lf">AWS</span><span class="cap">AWS EC2</span></div>
+          <div class="glass logo-tile"><img alt="Docker" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="lf">Docker</span><span class="cap">Docker</span></div>
+          <div class="glass logo-tile"><img alt="Kubernetes" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-original.svg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="lf">K8s</span><span class="cap">Kubernetes</span></div>
+          <div class="glass logo-tile"><img alt="PostgreSQL" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="lf">PG</span><span class="cap">PostgreSQL</span></div>
+          <div class="glass logo-tile"><img alt="MongoDB" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="lf">Mongo</span><span class="cap">MongoDB</span></div>
+          <div class="glass logo-tile"><img alt="Jenkins" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="lf">Jenkins</span><span class="cap">CI/CD</span></div>
+          <div class="glass logo-tile"><img alt="Git" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="lf">Git</span><span class="cap">Git</span></div>
         </div>
       </div>
     </div>
@@ -305,50 +317,20 @@
   <section id="experience">
     <div class="wrap">
       <div class="section-head reveal">
-        <div class="kicker" data-i18n="exp.kicker">// journey</div>
+        <div class="kicker" data-i18n="exp.kicker">Career pipeline</div>
         <h2 data-i18n="exp.h2">Experience</h2>
+        <p data-i18n="exp.sub">From Java developer to building autonomous AI pipelines — one stage at a time.</p>
       </div>
-      <div class="timeline">
-        <div class="tl-item reveal">
-          <div class="glass tl-card">
-            <div class="role" data-i18n="exp.1.role">Applied AI Engineer</div>
-            <div class="co">Vaisala · Finland</div>
-            <div class="when">2026 — <span data-i18n="exp.present">Present</span></div>
-            <div class="desc" data-i18n="exp.1.desc">Building scalable, secure AI agents and agentic workflows; designing multi-agent systems that automate software-development workflows across a microservices architecture.</div>
-          </div>
-        </div>
-        <div class="tl-item reveal">
-          <div class="glass tl-card">
-            <div class="role" data-i18n="exp.2.role">Senior Software Developer</div>
-            <div class="co">Vaisala · Finland</div>
-            <div class="when">2023 — 2026</div>
-            <div class="desc" data-i18n="exp.2.desc">Java 17 / Spring Boot / NestJS microservices on AWS &amp; Kubernetes for renewable-energy SaaS. Architecture, security (Keycloak), automated testing, code reviews and mentoring.</div>
-          </div>
-        </div>
-        <div class="tl-item reveal">
-          <div class="glass tl-card">
-            <div class="role" data-i18n="exp.3.role">Senior Software Designer → Software Designer → Senior Software Engineer</div>
-            <div class="co">Landis+Gyr · Finland &amp; India</div>
-            <div class="when">2018 — 2023</div>
-            <div class="desc" data-i18n="exp.3.desc">Smart-metering platforms in SAFe Agile. Scrum Master, PI planning, system design, maintenance &amp; enhancements, mentoring developers.</div>
-          </div>
-        </div>
-        <div class="tl-item reveal">
-          <div class="glass tl-card">
-            <div class="role" data-i18n="exp.4.role">Senior Software Engineer → Software Engineer</div>
-            <div class="co">ARX Analytics and Advisory · India</div>
-            <div class="when">2016 — 2018</div>
-            <div class="desc" data-i18n="exp.4.desc">Technical architecture, security layers and end-to-end design across high- and low-level system planning and implementation.</div>
-          </div>
-        </div>
-        <div class="tl-item reveal">
-          <div class="glass tl-card">
-            <div class="role" data-i18n="exp.5.role">Java / J2EE Developer</div>
-            <div class="co">Ipseity Group · India</div>
-            <div class="when">2013 — 2016</div>
-            <div class="desc" data-i18n="exp.5.desc">Full SDLC delivery — analysis, design, persistence layers, UI and integration across enterprise Java applications.</div>
-          </div>
-        </div>
+      <div class="career">
+        <div class="glass cnode reveal"><div class="yr">2013 — 2016</div><div class="cr" data-i18n="exp.5.role">Java / J2EE Developer</div><div class="cc">Ipseity Group · India</div></div>
+        <div class="fconn"></div>
+        <div class="glass cnode reveal"><div class="yr">2016 — 2018</div><div class="cr" data-i18n="exp.4.role">Senior Software Engineer</div><div class="cc">ARX Analytics · India</div></div>
+        <div class="fconn"></div>
+        <div class="glass cnode reveal"><div class="yr">2018 — 2023</div><div class="cr" data-i18n="exp.3.role">Sr Software Designer / Engineer</div><div class="cc">Landis+Gyr · FI &amp; IN</div></div>
+        <div class="fconn"></div>
+        <div class="glass cnode reveal"><div class="yr">2023 — 2026</div><div class="cr" data-i18n="exp.2.role">Senior Software Developer</div><div class="cc">Vaisala · Finland</div></div>
+        <div class="fconn"></div>
+        <div class="glass cnode now reveal"><div class="yr">2026 — <span data-i18n="exp.present">Now</span></div><div class="cr" data-i18n="exp.1.role">Applied AI Engineer</div><div class="cc">Vaisala · Finland</div><div class="nowtag"><span class="livedot"></span> <span data-i18n="exp.current">CURRENT</span></div></div>
       </div>
     </div>
   </section>
@@ -356,22 +338,13 @@
   <section id="writing">
     <div class="wrap">
       <div class="section-head reveal">
-        <div class="kicker" data-i18n="writing.kicker">// writing</div>
+        <div class="kicker" data-i18n="writing.kicker">Writing</div>
         <h2 data-i18n="writing.h2">On Medium</h2>
       </div>
       <div class="posts">
-        <a class="glass post reveal" href="https://medium.com/@theRealSignet" target="_blank" rel="noopener">
-          <h3>AI's Next Phase Won't Be Bigger Models — It Will Be Smaller, Specialized, and Tool-Centric</h3>
-          <span class="arrow">→</span>
-        </a>
-        <a class="glass post reveal" href="https://medium.com/@theRealSignet" target="_blank" rel="noopener">
-          <h3>Built a Free AI Code Review Tool for Bitbucket Server Using Just a Markdown File</h3>
-          <span class="arrow">→</span>
-        </a>
-        <a class="glass post reveal" href="https://medium.com/@theRealSignet" target="_blank" rel="noopener">
-          <h3>I Stopped Using AI as a Tool. I Started Architecting With It.</h3>
-          <span class="arrow">→</span>
-        </a>
+        <a class="glass post reveal" href="https://medium.com/@theRealSignet" target="_blank" rel="noopener"><h3>AI's Next Phase Won't Be Bigger Models — It Will Be Smaller, Specialized, and Tool-Centric</h3><span class="arrow">→</span></a>
+        <a class="glass post reveal" href="https://medium.com/@theRealSignet" target="_blank" rel="noopener"><h3>Built a Free AI Code Review Tool for Bitbucket Server Using Just a Markdown File</h3><span class="arrow">→</span></a>
+        <a class="glass post reveal" href="https://medium.com/@theRealSignet" target="_blank" rel="noopener"><h3>I Stopped Using AI as a Tool. I Started Architecting With It.</h3><span class="arrow">→</span></a>
       </div>
     </div>
   </section>
@@ -380,11 +353,10 @@
     <div class="wrap">
       <div class="glass contact-panel reveal">
         <h2 data-i18n="contact.h2">Let's build something intelligent.</h2>
-        <p data-i18n="contact.p">Open to conversations about agentic AI, MCP, and scalable backend engineering.</p>
+        <p data-i18n="contact.p">Open to conversations about agentic AI, software factories, and scalable backend engineering.</p>
         <div class="socials">
           <a class="btn btn-primary" href="mailto:ankit.katiyar91@gmail.com" data-i18n="contact.email">✉️ Email me</a>
           <a class="btn btn-glass" href="https://www.linkedin.com/in/therealsignet" target="_blank" rel="noopener">LinkedIn</a>
-          <a class="btn btn-glass" href="https://github.com/ankitkatiyar567" target="_blank" rel="noopener">GitHub</a>
           <a class="btn btn-glass" href="Ankit_Katiyar_CV.pdf" download data-i18n="btn.cv">Download CV</a>
         </div>
       </div>
@@ -392,94 +364,98 @@
   </section>
 
   <footer>
-    <div class="wrap">© <span id="year"></span> Ankit Katiyar · <span data-i18n="footer.tag">Applied AI Engineer · Bridging AI research and real applications</span> 🤖</div>
+    <div class="wrap">© <span id="year"></span> Ankit Katiyar · <span data-i18n="footer.tag">Applied AI Engineer · Software factories, 24×7</span> 🤖</div>
   </footer>
 
   <script>
     document.documentElement.classList.add('js');
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    const I18N = {
+    var I18N = {
       en: {
-        'nav.about': 'About', 'nav.skills': 'Skills', 'nav.experience': 'Experience', 'nav.writing': 'Writing', 'nav.resume': 'Resume',
+        'nav.factory': 'Factories', 'nav.skills': 'Stack', 'nav.experience': 'Experience', 'nav.writing': 'Writing', 'nav.resume': 'Resume',
         'hero.eyebrow': 'Applied AI Engineer · Vaisala · Finland',
-        'hero.h1': 'Architecting <span class="grad">with AI</span>,<br>not just using it.',
-        'hero.lead': 'I build scalable, secure AI agents and agentic workflows — bridging the gap between AI research and real business applications, on 13+ years of Java & microservices engineering.',
+        'hero.h1': 'I build <span class="grad">software factories</span> that run themselves.',
+        'hero.lead': 'Multi-agent AI factories that ship production code 24×7 — running locally and on AWS EC2. Backed by 13+ years of Java & microservices.',
         'btn.getintouch': 'Get in touch →', 'btn.cv': 'Download CV',
-        'herocard.title': 'Applied AI Engineer @ Vaisala',
-        'stat.years': 'Years exp.', 'stat.companies': 'Companies', 'stat.agents': 'Agents shipped',
-        'about.kicker': '// about', 'about.h2': 'From microservices to multi-agent systems',
-        'about.text': 'I\'m an <strong>Applied AI Engineer at Vaisala</strong>, designing intelligent <strong>multi-agent systems</strong> that automate complex software-development workflows — from code generation and testing through deployment and maintenance. I built a multi-agent setup for a microservices architecture where agents coordinate, communicate and orchestrate processes to improve system reliability. That work stands on <strong>13+ years</strong> of shipping production Java and microservice platforms across renewable energy, smart metering, logistics and real estate.',
-        'focus.1.h': 'Agentic Workflows', 'focus.1.p': 'Autonomous, tool-using agents that coordinate to ship and maintain software end-to-end.',
-        'focus.2.h': 'MCP & Claude Skills', 'focus.2.p': 'Model Context Protocol integrations and reusable skills that give agents real capabilities.',
-        'focus.3.h': 'Microservices at scale', 'focus.3.p': 'Java 17, Spring Boot & NestJS on AWS and Kubernetes — secure, tested, production-grade.',
-        'skills.kicker': '// toolbox', 'skills.h2': 'Skills & technologies',
-        'skills.g1': 'AI / Agentic', 'skills.g2': 'Languages & Frameworks', 'skills.g3': 'Cloud, DevOps & Data',
-        'exp.kicker': '// journey', 'exp.h2': 'Experience', 'exp.present': 'Present',
-        'exp.1.role': 'Applied AI Engineer', 'exp.1.desc': 'Building scalable, secure AI agents and agentic workflows; designing multi-agent systems that automate software-development workflows across a microservices architecture.',
-        'exp.2.role': 'Senior Software Developer', 'exp.2.desc': 'Java 17 / Spring Boot / NestJS microservices on AWS & Kubernetes for renewable-energy SaaS. Architecture, security (Keycloak), automated testing, code reviews and mentoring.',
-        'exp.3.role': 'Senior Software Designer → Software Designer → Senior Software Engineer', 'exp.3.desc': 'Smart-metering platforms in SAFe Agile. Scrum Master, PI planning, system design, maintenance & enhancements, mentoring developers.',
-        'exp.4.role': 'Senior Software Engineer → Software Engineer', 'exp.4.desc': 'Technical architecture, security layers and end-to-end design across high- and low-level system planning and implementation.',
-        'exp.5.role': 'Java / J2EE Developer', 'exp.5.desc': 'Full SDLC delivery — analysis, design, persistence layers, UI and integration across enterprise Java applications.',
-        'writing.kicker': '// writing', 'writing.h2': 'On Medium',
-        'contact.h2': 'Let\'s build something intelligent.', 'contact.p': 'Open to conversations about agentic AI, MCP, and scalable backend engineering.', 'contact.email': '✉️ Email me',
-        'footer.tag': 'Applied AI Engineer · Bridging AI research and real applications'
+        'status.title': 'Software Factory', 'status.live': 'RUNNING 24×7', 'status.local': 'Local cluster', 'status.agents': 'Agents active',
+        'm.years': 'Years building software', 'm.uptime': 'Factories running', 'm.agents': 'AI agents per factory', 'm.companies': 'Companies shipped for',
+        'factory.kicker': 'What I\'m building now', 'factory.h2': 'Autonomous software factories',
+        'factory.sub': 'A team of AI agents takes a requirement and ships a reviewed pull request — end to end, around the clock.',
+        'factory.localrun': 'Running locally', 'factory.awsrun': 'AWS EC2 · 24×7',
+        'f.req': 'Requirement', 'f.req.s': 'Jira / ticket', 'f.po': 'Product Owner', 'f.arch': 'Architect', 'f.arch.s': 'Design', 'f.dev': 'Developer', 'f.dev.s': 'Code', 'f.qa.s': 'Tests', 'f.rev': 'Reviewer', 'f.rev.s': 'Verify', 'f.ship': 'Shipped PR', 'f.ship.s': 'Merged',
+        'do.1.h': 'Agentic Workflows', 'do.1.p': 'Tool-using agents that coordinate end-to-end.',
+        'do.2.h': 'MCP & Claude Skills', 'do.2.p': 'Real tooling & context for agents.',
+        'do.3.h': '24×7 on AWS', 'do.3.p': 'Always-on factories on EC2 & local.',
+        'do.4.h': 'Microservices', 'do.4.p': 'Java 17, Spring Boot, Kubernetes.',
+        'stack.kicker': 'Toolbox', 'stack.h2': 'Stack',
+        'exp.kicker': 'Career pipeline', 'exp.h2': 'Experience', 'exp.present': 'Now', 'exp.current': 'CURRENT',
+        'exp.sub': 'From Java developer to building autonomous AI pipelines — one stage at a time.',
+        'exp.1.role': 'Applied AI Engineer', 'exp.2.role': 'Senior Software Developer', 'exp.3.role': 'Sr Software Designer / Engineer', 'exp.4.role': 'Senior Software Engineer', 'exp.5.role': 'Java / J2EE Developer',
+        'writing.kicker': 'Writing', 'writing.h2': 'On Medium',
+        'contact.h2': 'Let\'s build something intelligent.', 'contact.p': 'Open to conversations about agentic AI, software factories, and scalable backend engineering.', 'contact.email': '✉️ Email me',
+        'footer.tag': 'Applied AI Engineer · Software factories, 24×7'
       },
       fi: {
-        'nav.about': 'Tietoa', 'nav.skills': 'Taidot', 'nav.experience': 'Kokemus', 'nav.writing': 'Kirjoitukset', 'nav.resume': 'Ansioluettelo',
+        'nav.factory': 'Tehtaat', 'nav.skills': 'Teknologiat', 'nav.experience': 'Kokemus', 'nav.writing': 'Kirjoitukset', 'nav.resume': 'Ansioluettelo',
         'hero.eyebrow': 'Soveltava tekoälyinsinööri · Vaisala · Suomi',
-        'hero.h1': 'Suunnittelen <span class="grad">tekoälyn kanssa</span>,<br>en vain käytä sitä.',
-        'hero.lead': 'Rakennan skaalautuvia ja turvallisia tekoälyagentteja ja agenttisia työnkulkuja — yhdistäen tekoälytutkimuksen ja todelliset liiketoimintasovellukset yli 13 vuoden Java- ja mikropalvelukokemuksella.',
+        'hero.h1': 'Rakennan <span class="grad">ohjelmistotehtaita</span>, jotka toimivat itsenäisesti.',
+        'hero.lead': 'Moniagenttiset tekoälytehtaat, jotka toimittavat tuotantokoodia ympäri vuorokauden — paikallisesti ja AWS EC2:lla. Taustalla yli 13 vuoden Java- ja mikropalvelukokemus.',
         'btn.getintouch': 'Ota yhteyttä →', 'btn.cv': 'Lataa ansioluettelo',
-        'herocard.title': 'Soveltava tekoälyinsinööri @ Vaisala',
-        'stat.years': 'Vuotta kok.', 'stat.companies': 'Yritystä', 'stat.agents': 'Agenttia',
-        'about.kicker': '// tietoa', 'about.h2': 'Mikropalveluista moniagenttijärjestelmiin',
-        'about.text': 'Olen <strong>soveltava tekoälyinsinööri Vaisalalla</strong> ja suunnittelen älykkäitä <strong>moniagenttijärjestelmiä</strong>, jotka automatisoivat monimutkaisia ohjelmistokehityksen työnkulkuja — koodin generoinnista ja testauksesta käyttöönottoon ja ylläpitoon. Rakensin mikropalveluarkkitehtuuriin moniagenttiratkaisun, jossa agentit koordinoivat, kommunikoivat ja orkestroivat prosesseja järjestelmän luotettavuuden parantamiseksi. Tämä työ perustuu <strong>yli 13 vuoden</strong> kokemukseen tuotantotason Java- ja mikropalvelualustojen toimittamisesta uusiutuvan energian, älykkään mittauksen, logistiikan ja kiinteistöalan parissa.',
-        'focus.1.h': 'Agenttiset työnkulut', 'focus.1.p': 'Itsenäiset, työkaluja käyttävät agentit, jotka koordinoivat ohjelmistojen toimituksen ja ylläpidon päästä päähän.',
-        'focus.2.h': 'MCP & Claude Skills', 'focus.2.p': 'Model Context Protocol -integraatiot ja uudelleenkäytettävät taidot, jotka antavat agenteille todellisia kyvykkyyksiä.',
-        'focus.3.h': 'Mikropalvelut mittakaavassa', 'focus.3.p': 'Java 17, Spring Boot & NestJS AWS:llä ja Kubernetesilla — turvallinen, testattu, tuotantotasoinen.',
-        'skills.kicker': '// työkalut', 'skills.h2': 'Taidot & teknologiat',
-        'skills.g1': 'Tekoäly / agentit', 'skills.g2': 'Kielet & kehykset', 'skills.g3': 'Pilvi, DevOps & data',
-        'exp.kicker': '// polku', 'exp.h2': 'Työkokemus', 'exp.present': 'Nykyhetki',
-        'exp.1.role': 'Soveltava tekoälyinsinööri', 'exp.1.desc': 'Rakennan skaalautuvia ja turvallisia tekoälyagentteja ja agenttisia työnkulkuja; suunnittelen moniagenttijärjestelmiä, jotka automatisoivat ohjelmistokehityksen työnkulkuja mikropalveluarkkitehtuurissa.',
-        'exp.2.role': 'Vanhempi ohjelmistokehittäjä', 'exp.2.desc': 'Java 17 / Spring Boot / NestJS -mikropalvelut AWS:llä & Kubernetesilla uusiutuvan energian SaaS-ratkaisuihin. Arkkitehtuuri, tietoturva (Keycloak), automatisoitu testaus, koodikatselmoinnit ja mentorointi.',
-        'exp.3.role': 'Vanhempi ohjelmistosuunnittelija → Ohjelmistosuunnittelija → Vanhempi ohjelmistoinsinööri', 'exp.3.desc': 'Älykkään mittauksen alustat SAFe Agile -mallissa. Scrum Master, PI-suunnittelu, järjestelmäsuunnittelu, ylläpito & parannukset, kehittäjien mentorointi.',
-        'exp.4.role': 'Vanhempi ohjelmistoinsinööri → Ohjelmistoinsinööri', 'exp.4.desc': 'Tekninen arkkitehtuuri, tietoturvakerrokset ja päästä päähän -suunnittelu sekä korkean että matalan tason järjestelmäsuunnittelussa.',
-        'exp.5.role': 'Java / J2EE -kehittäjä', 'exp.5.desc': 'Koko SDLC-toimitus — analyysi, suunnittelu, tietovarastokerrokset, käyttöliittymä ja integraatiot yritystason Java-sovelluksissa.',
-        'writing.kicker': '// kirjoitukset', 'writing.h2': 'Mediumissa',
-        'contact.h2': 'Rakennetaan jotain älykästä.', 'contact.p': 'Keskustelen mielelläni agenttisesta tekoälystä, MCP:stä ja skaalautuvasta backend-kehityksestä.', 'contact.email': '✉️ Lähetä sähköpostia',
-        'footer.tag': 'Soveltava tekoälyinsinööri · Yhdistän tekoälytutkimuksen ja todelliset sovellukset'
+        'status.title': 'Ohjelmistotehdas', 'status.live': 'KÄYNNISSÄ 24×7', 'status.local': 'Paikallinen klusteri', 'status.agents': 'Agentteja aktiivisena',
+        'm.years': 'Vuotta ohjelmistokehitystä', 'm.uptime': 'Tehtaat käynnissä', 'm.agents': 'Tekoälyagenttia / tehdas', 'm.companies': 'Yritystä, joille toimittanut',
+        'factory.kicker': '// mitä rakennan nyt', 'factory.h2': 'Itsenäiset ohjelmistotehtaat',
+        'factory.sub': 'Tekoälyagenttien tiimi ottaa vaatimuksen ja toimittaa katselmoidun pull requestin — päästä päähän, ympäri vuorokauden.',
+        'factory.localrun': 'Toimii paikallisesti', 'factory.awsrun': 'AWS EC2 · 24×7',
+        'f.req': 'Vaatimus', 'f.req.s': 'Jira / tiketti', 'f.po': 'Tuoteomistaja', 'f.arch': 'Arkkitehti', 'f.arch.s': 'Suunnittelu', 'f.dev': 'Kehittäjä', 'f.dev.s': 'Koodi', 'f.qa.s': 'Testit', 'f.rev': 'Katselmoija', 'f.rev.s': 'Varmistus', 'f.ship': 'Valmis PR', 'f.ship.s': 'Yhdistetty',
+        'do.1.h': 'Agenttiset työnkulut', 'do.1.p': 'Työkaluja käyttävät agentit, jotka koordinoivat päästä päähän.',
+        'do.2.h': 'MCP & Claude Skills', 'do.2.p': 'Todellisia työkaluja ja kontekstia agenteille.',
+        'do.3.h': '24×7 AWS:llä', 'do.3.p': 'Aina päällä olevat tehtaat EC2:lla & paikallisesti.',
+        'do.4.h': 'Mikropalvelut', 'do.4.p': 'Java 17, Spring Boot, Kubernetes.',
+        'stack.kicker': 'Työkalut', 'stack.h2': 'Teknologiat',
+        'exp.kicker': 'Urapolku', 'exp.h2': 'Työkokemus', 'exp.present': 'Nyt', 'exp.current': 'NYKYINEN',
+        'exp.sub': 'Java-kehittäjästä itsenäisten tekoälyputkien rakentajaksi — vaihe kerrallaan.',
+        'exp.1.role': 'Soveltava tekoälyinsinööri', 'exp.2.role': 'Vanhempi ohjelmistokehittäjä', 'exp.3.role': 'Vanh. ohjelmistosuunnittelija / -insinööri', 'exp.4.role': 'Vanhempi ohjelmistoinsinööri', 'exp.5.role': 'Java / J2EE -kehittäjä',
+        'writing.kicker': 'Kirjoitukset', 'writing.h2': 'Mediumissa',
+        'contact.h2': 'Rakennetaan jotain älykästä.', 'contact.p': 'Keskustelen mielelläni agenttisesta tekoälystä, ohjelmistotehtaista ja skaalautuvasta backend-kehityksestä.', 'contact.email': '✉️ Lähetä sähköpostia',
+        'footer.tag': 'Soveltava tekoälyinsinööri · Ohjelmistotehtaat, 24×7'
       }
     };
 
     function applyLang(lang) {
-      const dict = I18N[lang] || I18N.en;
+      var dict = I18N[lang] || I18N.en;
       document.documentElement.lang = lang;
-      document.querySelectorAll('[data-i18n]').forEach(function (el) {
-        var k = el.getAttribute('data-i18n'); if (dict[k] != null) el.textContent = dict[k];
-      });
-      document.querySelectorAll('[data-i18n-html]').forEach(function (el) {
-        var k = el.getAttribute('data-i18n-html'); if (dict[k] != null) el.innerHTML = dict[k];
-      });
-      document.querySelectorAll('.lang-toggle button').forEach(function (b) {
-        b.classList.toggle('active', b.getAttribute('data-lang') === lang);
-      });
+      document.querySelectorAll('[data-i18n]').forEach(function (el) { var k = el.getAttribute('data-i18n'); if (dict[k] != null) el.textContent = dict[k]; });
+      document.querySelectorAll('[data-i18n-html]').forEach(function (el) { var k = el.getAttribute('data-i18n-html'); if (dict[k] != null) el.innerHTML = dict[k]; });
+      document.querySelectorAll('.lang-toggle button').forEach(function (b) { b.classList.toggle('active', b.getAttribute('data-lang') === lang); });
       try { localStorage.setItem('lang', lang); } catch (e) {}
     }
-
     var saved = null; try { saved = localStorage.getItem('lang'); } catch (e) {}
     var initial = saved || ((navigator.language || 'en').toLowerCase().indexOf('fi') === 0 ? 'fi' : 'en');
     applyLang(initial);
-    document.querySelectorAll('.lang-toggle button').forEach(function (b) {
-      b.addEventListener('click', function () { applyLang(b.getAttribute('data-lang')); });
-    });
+    document.querySelectorAll('.lang-toggle button').forEach(function (b) { b.addEventListener('click', function () { applyLang(b.getAttribute('data-lang')); }); });
 
+    // reveal + count-up
     var reveals = document.querySelectorAll('.reveal');
+    function countUp(el) {
+      var target = parseInt(el.getAttribute('data-count'), 10);
+      var suffix = el.getAttribute('data-suffix') || '';
+      var start = 0, dur = 1100, t0 = null;
+      function step(ts) { if (!t0) t0 = ts; var p = Math.min((ts - t0) / dur, 1); el.textContent = Math.floor(p * target) + suffix; if (p < 1) requestAnimationFrame(step); else el.textContent = target + suffix; }
+      requestAnimationFrame(step);
+    }
     var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          var c = e.target.querySelector('[data-count]');
+          if (c && !c.dataset.done) { c.dataset.done = '1'; countUp(c); }
+          io.unobserve(e.target);
+        }
+      });
     }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
     reveals.forEach(function (el) { io.observe(el); });
-    setTimeout(function () { reveals.forEach(function (el) { el.classList.add('in'); }); }, 2200);
+    setTimeout(function () { reveals.forEach(function (el) { el.classList.add('in'); var c = el.querySelector('[data-count]'); if (c && !c.dataset.done) { c.dataset.done = '1'; countUp(c); } }); }, 2400);
   </script>
 </body>
 </html>
