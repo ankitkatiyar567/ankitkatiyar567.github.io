@@ -4,26 +4,29 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ankit Katiyar — Applied AI Engineer</title>
-  <meta name="description" content="Ankit Katiyar — Applied AI Engineer at Vaisala. Building agentic workflows and multi-agent systems on 13+ years of Java & microservices experience." />
+  <meta name="description" content="Ankit Katiyar — Applied AI Engineer at Vaisala. Building agentic workflows and multi-agent systems on 13+ years of Java & microservices." />
   <meta property="og:title" content="Ankit Katiyar — Applied AI Engineer" />
   <meta property="og:description" content="Building scalable, secure AI agents and agentic workflows. 13+ years of Java & microservices." />
   <meta property="og:type" content="website" />
-  <meta name="theme-color" content="#0b0e14" />
+  <meta name="theme-color" content="#070912" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23d97757'/%3E%3Cstop offset='0.5' stop-color='%237c5cff'/%3E%3Cstop offset='1' stop-color='%236e9fff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='24' fill='%23070912'/%3E%3Ctext x='50' y='68' font-family='Arial' font-size='52' font-weight='700' text-anchor='middle' fill='url(%23g)'%3EAK%3C/text%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;450;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg: #0b0e14;
-      --bg-soft: #11151f;
-      --panel: #151a26;
-      --border: #232a3b;
-      --text: #e6e9f0;
-      --muted: #8b93a7;
+      --bg: #070912;
+      --text: #eef1f8;
+      --muted: #9aa3ba;
       --accent: #d97757;
       --accent-2: #6e9fff;
-      --accent-3: #7c5cff;
-      --max: 1080px;
+      --accent-3: #9a7cff;
+      --glass: rgba(255, 255, 255, 0.055);
+      --glass-strong: rgba(255, 255, 255, 0.08);
+      --glass-border: rgba(255, 255, 255, 0.12);
+      --glass-hi: rgba(255, 255, 255, 0.22);
+      --radius: 22px;
+      --max: 1120px;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -34,140 +37,167 @@
       line-height: 1.65;
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
+      position: relative;
     }
     a { color: inherit; text-decoration: none; }
-    ::selection { background: var(--accent); color: #fff; }
+    ::selection { background: var(--accent-3); color: #fff; }
 
-    /* ambient glow */
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background:
-        radial-gradient(60% 50% at 15% 0%, rgba(124,92,255,0.16), transparent 60%),
-        radial-gradient(50% 50% at 90% 10%, rgba(110,159,255,0.12), transparent 55%),
-        radial-gradient(40% 40% at 70% 90%, rgba(217,119,87,0.10), transparent 60%);
-      pointer-events: none;
-      z-index: 0;
-    }
-    .wrap { position: relative; z-index: 1; max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+    /* ===== animated aurora background ===== */
+    .aurora { position: fixed; inset: 0; z-index: -2; overflow: hidden; }
+    .blob { position: absolute; border-radius: 50%; filter: blur(90px); opacity: 0.55; will-change: transform; }
+    .b1 { width: 50vw; height: 50vw; background: #7c5cff; top: -12%; left: -8%; animation: drift1 22s ease-in-out infinite; }
+    .b2 { width: 42vw; height: 42vw; background: #6e9fff; top: 8%; right: -10%; animation: drift2 26s ease-in-out infinite; }
+    .b3 { width: 46vw; height: 46vw; background: #d97757; bottom: -16%; left: 18%; opacity: 0.42; animation: drift3 30s ease-in-out infinite; }
+    .b4 { width: 30vw; height: 30vw; background: #2dd4bf; bottom: 6%; right: 14%; opacity: 0.28; animation: drift1 28s ease-in-out infinite reverse; }
+    @keyframes drift1 { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(8vw, 6vh) scale(1.12); } }
+    @keyframes drift2 { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(-7vw, 8vh) scale(0.9); } }
+    @keyframes drift3 { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(6vw, -7vh) scale(1.1); } }
+    /* dark veil + grain so glass reads well */
+    .veil { position: fixed; inset: 0; z-index: -1; background:
+        radial-gradient(120% 80% at 50% 0%, rgba(7,9,18,0.2), rgba(7,9,18,0.82) 70%),
+        linear-gradient(180deg, rgba(7,9,18,0.4), rgba(7,9,18,0.7)); }
+    .grain { position: fixed; inset: 0; z-index: -1; opacity: 0.04; pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
 
-    /* nav */
-    nav {
-      position: sticky; top: 0; z-index: 50;
-      backdrop-filter: blur(12px);
-      background: rgba(11,14,20,0.72);
-      border-bottom: 1px solid var(--border);
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+
+    /* ===== glass primitive ===== */
+    .glass {
+      background: var(--glass);
+      backdrop-filter: blur(22px) saturate(170%);
+      -webkit-backdrop-filter: blur(22px) saturate(170%);
+      border: 1px solid var(--glass-border);
+      box-shadow: inset 0 1px 0 var(--glass-hi), inset 0 -1px 0 rgba(0,0,0,0.25), 0 18px 50px rgba(0,0,0,0.4);
+      border-radius: var(--radius);
     }
-    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
-    .logo { font-family: 'Space Grotesk'; font-weight: 700; font-size: 1.1rem; letter-spacing: -0.02em; }
-    .logo span { color: var(--accent); }
-    .nav-links { display: flex; gap: 28px; font-size: 0.92rem; }
+
+    /* ===== nav ===== */
+    nav { position: sticky; top: 14px; z-index: 50; margin: 14px auto 0; max-width: var(--max); padding: 0 24px; }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 60px; padding: 0 22px; border-radius: 18px;
+      background: rgba(12,15,26,0.55);
+      backdrop-filter: blur(20px) saturate(160%);
+      -webkit-backdrop-filter: blur(20px) saturate(160%);
+      border: 1px solid var(--glass-border);
+      box-shadow: inset 0 1px 0 var(--glass-hi), 0 10px 30px rgba(0,0,0,0.35);
+    }
+    .logo { font-family: 'Space Grotesk'; font-weight: 700; font-size: 1.08rem; letter-spacing: -0.02em; }
+    .logo span { background: linear-gradient(110deg, var(--accent), var(--accent-3)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    .nav-links { display: flex; gap: 26px; font-size: 0.92rem; }
     .nav-links a { color: var(--muted); transition: color 0.2s; }
     .nav-links a:hover { color: var(--text); }
-    @media (max-width: 680px) { .nav-links { display: none; } }
+    @media (max-width: 720px) { .nav-links { display: none; } }
 
-    /* hero */
-    header { padding: 110px 0 90px; }
+    /* ===== hero ===== */
+    header { padding: 96px 0 70px; }
+    .hero-grid { display: grid; grid-template-columns: 1.4fr 0.9fr; gap: 36px; align-items: center; }
+    @media (max-width: 880px) { .hero-grid { grid-template-columns: 1fr; } }
     .eyebrow {
-      display: inline-flex; align-items: center; gap: 8px;
-      font-family: 'JetBrains Mono', monospace; font-size: 0.8rem;
-      color: var(--accent); border: 1px solid var(--border);
-      padding: 6px 14px; border-radius: 999px; background: var(--bg-soft);
-      margin-bottom: 28px;
-    }
-    .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 10px var(--accent); animation: pulse 2s infinite; }
-    @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
-    h1 {
-      font-family: 'Space Grotesk'; font-weight: 700;
-      font-size: clamp(2.6rem, 7vw, 4.6rem); line-height: 1.05;
-      letter-spacing: -0.03em; margin-bottom: 22px;
-    }
-    h1 .grad {
-      background: linear-gradient(110deg, var(--accent), var(--accent-3) 60%, var(--accent-2));
-      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
-    }
-    .lead { font-size: clamp(1.05rem, 2.2vw, 1.3rem); color: var(--muted); max-width: 640px; margin-bottom: 36px; }
-    .cta { display: flex; gap: 14px; flex-wrap: wrap; }
-    .btn {
       display: inline-flex; align-items: center; gap: 9px;
-      padding: 13px 22px; border-radius: 12px; font-weight: 600; font-size: 0.95rem;
-      transition: transform 0.15s, box-shadow 0.2s, background 0.2s;
+      font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: #f1d9cf;
+      padding: 8px 16px; border-radius: 999px; margin-bottom: 26px;
+      background: var(--glass); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+      border: 1px solid var(--glass-border); box-shadow: inset 0 1px 0 var(--glass-hi);
     }
-    .btn-primary { background: linear-gradient(110deg, var(--accent), var(--accent-3)); color: #fff; }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(124,92,255,0.35); }
-    .btn-ghost { border: 1px solid var(--border); color: var(--text); background: var(--bg-soft); }
-    .btn-ghost:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 12px 2px var(--accent); animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.35; } }
+    h1 { font-family: 'Space Grotesk'; font-weight: 700; font-size: clamp(2.7rem, 7vw, 4.8rem); line-height: 1.04; letter-spacing: -0.035em; margin-bottom: 22px; }
+    h1 .grad { background: linear-gradient(110deg, var(--accent), var(--accent-3) 55%, var(--accent-2)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    .lead { font-size: clamp(1.05rem, 2.1vw, 1.28rem); color: var(--muted); max-width: 600px; margin-bottom: 34px; }
+    .cta { display: flex; gap: 13px; flex-wrap: wrap; }
+    .btn { display: inline-flex; align-items: center; gap: 9px; padding: 13px 22px; border-radius: 14px; font-weight: 600; font-size: 0.95rem; transition: transform 0.18s, box-shadow 0.25s, background 0.2s; }
+    .btn-primary { background: linear-gradient(110deg, var(--accent), var(--accent-3)); color: #fff; box-shadow: 0 10px 28px rgba(124,92,255,0.4); }
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(124,92,255,0.55); }
+    .btn-glass { background: var(--glass-strong); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border: 1px solid var(--glass-border); box-shadow: inset 0 1px 0 var(--glass-hi); color: var(--text); }
+    .btn-glass:hover { transform: translateY(-3px); border-color: rgba(255,255,255,0.3); }
 
-    /* sections */
-    section { padding: 70px 0; }
-    .section-head { margin-bottom: 44px; }
-    .section-head .kicker { font-family: 'JetBrains Mono', monospace; color: var(--accent-2); font-size: 0.82rem; letter-spacing: 0.05em; }
-    .section-head h2 { font-family: 'Space Grotesk'; font-weight: 700; font-size: clamp(1.8rem, 4vw, 2.6rem); letter-spacing: -0.02em; margin-top: 8px; }
-
-    /* about + focus cards */
-    .grid { display: grid; gap: 20px; }
-    .focus-grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
-    .card {
-      background: var(--panel); border: 1px solid var(--border); border-radius: 16px;
-      padding: 26px; transition: transform 0.2s, border-color 0.2s;
+    /* hero glass stat card */
+    .hero-card { padding: 28px; }
+    .hero-card .av {
+      width: 64px; height: 64px; border-radius: 18px; margin-bottom: 18px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-3));
+      display: grid; place-items: center; font-family: 'Space Grotesk'; font-weight: 700; font-size: 1.5rem; color: #fff;
+      box-shadow: 0 8px 24px rgba(124,92,255,0.45);
     }
-    .card:hover { transform: translateY(-4px); border-color: var(--accent); }
-    .card .ico { font-size: 1.6rem; margin-bottom: 14px; }
-    .card h3 { font-family: 'Space Grotesk'; font-size: 1.15rem; margin-bottom: 8px; }
-    .card p { color: var(--muted); font-size: 0.95rem; }
+    .hero-card .name { font-family: 'Space Grotesk'; font-weight: 600; font-size: 1.2rem; }
+    .hero-card .title { color: var(--accent-2); font-size: 0.9rem; margin-bottom: 18px; }
+    .stat-row { display: flex; gap: 10px; }
+    .stat { flex: 1; text-align: center; padding: 14px 8px; border-radius: 14px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); }
+    .stat .n { font-family: 'Space Grotesk'; font-weight: 700; font-size: 1.5rem; background: linear-gradient(110deg, var(--accent-2), var(--accent-3)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    .stat .l { font-size: 0.72rem; color: var(--muted); margin-top: 2px; }
 
-    .about-text { font-size: 1.08rem; color: #c4cad8; max-width: 760px; }
+    /* ===== sections ===== */
+    section { padding: 66px 0; }
+    .section-head { margin-bottom: 40px; }
+    .kicker { font-family: 'JetBrains Mono', monospace; color: var(--accent-2); font-size: 0.8rem; letter-spacing: 0.06em; }
+    .section-head h2 { font-family: 'Space Grotesk'; font-weight: 700; font-size: clamp(1.8rem, 4vw, 2.6rem); letter-spacing: -0.025em; margin-top: 8px; }
+
+    .grid { display: grid; gap: 18px; }
+    .focus-grid { grid-template-columns: repeat(auto-fit, minmax(248px, 1fr)); }
+    .card { padding: 26px; transition: transform 0.25s, box-shadow 0.3s, border-color 0.25s; }
+    .card:hover { transform: translateY(-6px); border-color: rgba(255,255,255,0.26); box-shadow: inset 0 1px 0 var(--glass-hi), 0 26px 60px rgba(0,0,0,0.5), 0 0 40px rgba(124,92,255,0.18); }
+    .card .ico { width: 46px; height: 46px; border-radius: 13px; display: grid; place-items: center; font-size: 1.4rem; margin-bottom: 16px; background: rgba(255,255,255,0.06); border: 1px solid var(--glass-border); }
+    .card h3 { font-family: 'Space Grotesk'; font-size: 1.13rem; margin-bottom: 8px; }
+    .card p { color: var(--muted); font-size: 0.94rem; }
+
+    .about-panel { padding: 34px; }
+    .about-text { font-size: 1.08rem; color: #cbd1e2; max-width: 800px; }
     .about-text strong { color: var(--text); }
 
     /* skills */
-    .skill-group { margin-bottom: 26px; }
-    .skill-group h4 { font-family: 'JetBrains Mono', monospace; color: var(--muted); font-size: 0.85rem; margin-bottom: 14px; text-transform: uppercase; letter-spacing: 0.08em; }
+    .skills-panel { padding: 32px; }
+    .skill-group { margin-bottom: 24px; }
+    .skill-group:last-child { margin-bottom: 0; }
+    .skill-group h4 { font-family: 'JetBrains Mono', monospace; color: var(--muted); font-size: 0.8rem; margin-bottom: 13px; text-transform: uppercase; letter-spacing: 0.09em; }
     .tags { display: flex; flex-wrap: wrap; gap: 10px; }
-    .tag {
-      font-size: 0.88rem; padding: 8px 15px; border-radius: 10px;
-      background: var(--bg-soft); border: 1px solid var(--border); color: #cdd3e0;
-      transition: border-color 0.2s, color 0.2s, transform 0.15s;
-    }
-    .tag:hover { border-color: var(--accent-2); color: #fff; transform: translateY(-2px); }
+    .tag { font-size: 0.87rem; padding: 8px 15px; border-radius: 11px; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); color: #d3d8e6; box-shadow: inset 0 1px 0 rgba(255,255,255,0.08); transition: transform 0.16s, border-color 0.2s, color 0.2s, background 0.2s; }
+    .tag:hover { transform: translateY(-3px); border-color: var(--accent-2); color: #fff; background: rgba(110,159,255,0.14); }
 
     /* timeline */
-    .timeline { position: relative; padding-left: 28px; }
-    .timeline::before { content: ""; position: absolute; left: 6px; top: 6px; bottom: 6px; width: 2px; background: linear-gradient(var(--accent), var(--accent-3), transparent); }
-    .tl-item { position: relative; padding-bottom: 34px; }
-    .tl-item::before { content: ""; position: absolute; left: -27px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: var(--bg); border: 2px solid var(--accent); }
-    .tl-item .role { font-family: 'Space Grotesk'; font-weight: 600; font-size: 1.12rem; }
-    .tl-item .co { color: var(--accent-2); font-size: 0.95rem; }
-    .tl-item .when { font-family: 'JetBrains Mono', monospace; color: var(--muted); font-size: 0.82rem; margin: 4px 0 8px; }
-    .tl-item .desc { color: var(--muted); font-size: 0.95rem; max-width: 640px; }
+    .timeline { position: relative; padding-left: 30px; }
+    .timeline::before { content: ""; position: absolute; left: 7px; top: 8px; bottom: 8px; width: 2px; background: linear-gradient(var(--accent), var(--accent-3), transparent); }
+    .tl-item { position: relative; padding: 0 0 18px; margin-bottom: 16px; }
+    .tl-item:last-child { margin-bottom: 0; }
+    .tl-item::before { content: ""; position: absolute; left: -29px; top: 22px; width: 14px; height: 14px; border-radius: 50%; background: var(--bg); border: 2px solid var(--accent); box-shadow: 0 0 12px rgba(217,119,87,0.6); }
+    .tl-card { padding: 20px 24px; }
+    .tl-item .role { font-family: 'Space Grotesk'; font-weight: 600; font-size: 1.08rem; }
+    .tl-item .co { color: var(--accent-2); font-size: 0.92rem; }
+    .tl-item .when { font-family: 'JetBrains Mono', monospace; color: var(--muted); font-size: 0.8rem; margin: 5px 0 9px; }
+    .tl-item .desc { color: var(--muted); font-size: 0.93rem; }
 
     /* writing */
-    .posts { display: grid; gap: 16px; }
-    .post {
-      display: flex; align-items: center; justify-content: space-between; gap: 20px;
-      background: var(--panel); border: 1px solid var(--border); border-radius: 14px;
-      padding: 22px 24px; transition: border-color 0.2s, transform 0.2s;
-    }
-    .post:hover { border-color: var(--accent); transform: translateX(4px); }
-    .post h3 { font-family: 'Space Grotesk'; font-size: 1.05rem; font-weight: 600; }
-    .post .arrow { color: var(--accent); font-size: 1.3rem; flex-shrink: 0; }
+    .posts { display: grid; gap: 15px; }
+    .post { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 22px 26px; transition: transform 0.22s, border-color 0.2s, box-shadow 0.3s; }
+    .post:hover { transform: translateX(6px); border-color: rgba(255,255,255,0.26); box-shadow: inset 0 1px 0 var(--glass-hi), 0 20px 44px rgba(0,0,0,0.45); }
+    .post h3 { font-family: 'Space Grotesk'; font-size: 1.04rem; font-weight: 600; }
+    .post .arrow { color: var(--accent); font-size: 1.35rem; flex-shrink: 0; transition: transform 0.2s; }
+    .post:hover .arrow { transform: translateX(4px); }
 
     /* contact */
-    .contact { text-align: center; padding: 90px 0; }
-    .contact h2 { font-family: 'Space Grotesk'; font-size: clamp(2rem, 5vw, 3.2rem); letter-spacing: -0.02em; margin-bottom: 16px; }
-    .contact p { color: var(--muted); max-width: 460px; margin: 0 auto 32px; font-size: 1.05rem; }
-    .socials { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .contact-panel { padding: 64px 40px; text-align: center; }
+    .contact-panel h2 { font-family: 'Space Grotesk'; font-size: clamp(2rem, 5vw, 3rem); letter-spacing: -0.025em; margin-bottom: 14px; }
+    .contact-panel p { color: var(--muted); max-width: 460px; margin: 0 auto 30px; font-size: 1.05rem; }
+    .socials { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
 
-    footer { border-top: 1px solid var(--border); padding: 30px 0; text-align: center; color: var(--muted); font-size: 0.85rem; }
+    footer { padding: 40px 0 50px; text-align: center; color: var(--muted); font-size: 0.85rem; }
 
-    /* reveal animation */
-    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
-    .reveal.in { opacity: 1; transform: none; }
+    /* reveal — only hidden when JS is active (no-JS fallback keeps content visible) */
+    .js .reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.7s cubic-bezier(.2,.7,.2,1), transform 0.7s cubic-bezier(.2,.7,.2,1); }
+    .js .reveal.in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .js .reveal { opacity: 1 !important; transform: none !important; }
+      .blob { animation: none !important; }
+    }
   </style>
 </head>
 <body>
+  <div class="aurora"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="blob b4"></div></div>
+  <div class="veil"></div>
+  <div class="grain"></div>
+
   <nav>
-    <div class="wrap nav-inner">
+    <div class="nav-inner">
       <div class="logo">Ankit<span>.</span>Katiyar</div>
       <div class="nav-links">
         <a href="#about">About</a>
@@ -180,14 +210,26 @@
   </nav>
 
   <header>
-    <div class="wrap">
-      <div class="eyebrow"><span class="dot"></span> Applied AI Engineer · Vaisala · Finland</div>
-      <h1>Architecting <span class="grad">with AI</span>,<br>not just using it.</h1>
-      <p class="lead">I build scalable, secure AI agents and agentic workflows — bridging the gap between AI research and real business applications, on 13+ years of Java &amp; microservices engineering.</p>
-      <div class="cta">
-        <a class="btn btn-primary" href="#contact">Get in touch →</a>
-        <a class="btn btn-ghost" href="https://medium.com/@theRealSignet" target="_blank" rel="noopener">Read my writing</a>
-        <a class="btn btn-ghost" href="https://github.com/ankitkatiyar567" target="_blank" rel="noopener">GitHub</a>
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow"><span class="dot"></span> Applied AI Engineer · Vaisala · Finland</div>
+        <h1>Architecting <span class="grad">with AI</span>,<br>not just using it.</h1>
+        <p class="lead">I build scalable, secure AI agents and agentic workflows — bridging the gap between AI research and real business applications, on 13+ years of Java &amp; microservices engineering.</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="#contact">Get in touch →</a>
+          <a class="btn btn-glass" href="https://medium.com/@theRealSignet" target="_blank" rel="noopener">Read my writing</a>
+          <a class="btn btn-glass" href="https://github.com/ankitkatiyar567" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <div class="glass hero-card reveal">
+        <div class="av">AK</div>
+        <div class="name">Ankit Katiyar</div>
+        <div class="title">Applied AI Engineer @ Vaisala</div>
+        <div class="stat-row">
+          <div class="stat"><div class="n">13+</div><div class="l">Years exp.</div></div>
+          <div class="stat"><div class="n">5</div><div class="l">Companies</div></div>
+          <div class="stat"><div class="n">∞</div><div class="l">Agents shipped</div></div>
+        </div>
       </div>
     </div>
   </header>
@@ -198,27 +240,29 @@
         <div class="kicker">// about</div>
         <h2>From microservices to multi-agent systems</h2>
       </div>
-      <p class="about-text reveal">
-        I'm an <strong>Applied AI Engineer at Vaisala</strong>, designing intelligent
-        <strong>multi-agent systems</strong> that automate complex software-development workflows —
-        from code generation and testing through deployment and maintenance. I built a multi-agent
-        setup for a microservices architecture where agents coordinate, communicate and orchestrate
-        processes to improve system reliability. That work stands on <strong>13+ years</strong> of
-        shipping production Java and microservice platforms across renewable energy, smart metering,
-        logistics and real estate.
-      </p>
-      <div class="grid focus-grid reveal" style="margin-top: 40px;">
-        <div class="card">
+      <div class="glass about-panel reveal">
+        <p class="about-text">
+          I'm an <strong>Applied AI Engineer at Vaisala</strong>, designing intelligent
+          <strong>multi-agent systems</strong> that automate complex software-development workflows —
+          from code generation and testing through deployment and maintenance. I built a multi-agent
+          setup for a microservices architecture where agents coordinate, communicate and orchestrate
+          processes to improve system reliability. That work stands on <strong>13+ years</strong> of
+          shipping production Java and microservice platforms across renewable energy, smart metering,
+          logistics and real estate.
+        </p>
+      </div>
+      <div class="grid focus-grid" style="margin-top: 18px;">
+        <div class="glass card reveal">
           <div class="ico">🤖</div>
           <h3>Agentic Workflows</h3>
           <p>Autonomous, tool-using agents that coordinate to ship and maintain software end-to-end.</p>
         </div>
-        <div class="card">
+        <div class="glass card reveal">
           <div class="ico">🧩</div>
-          <h3>MCP & Claude Skills</h3>
+          <h3>MCP &amp; Claude Skills</h3>
           <p>Model Context Protocol integrations and reusable skills that give agents real capabilities.</p>
         </div>
-        <div class="card">
+        <div class="glass card reveal">
           <div class="ico">🏗️</div>
           <h3>Microservices at scale</h3>
           <p>Java 17, Spring Boot &amp; NestJS on AWS and Kubernetes — secure, tested, production-grade.</p>
@@ -233,7 +277,7 @@
         <div class="kicker">// toolbox</div>
         <h2>Skills &amp; technologies</h2>
       </div>
-      <div class="reveal">
+      <div class="glass skills-panel reveal">
         <div class="skill-group">
           <h4>AI / Agentic</h4>
           <div class="tags">
@@ -282,36 +326,46 @@
         <div class="kicker">// journey</div>
         <h2>Experience</h2>
       </div>
-      <div class="timeline reveal">
-        <div class="tl-item">
-          <div class="role">Applied AI Engineer</div>
-          <div class="co">Vaisala · Finland</div>
-          <div class="when">2026 — Present</div>
-          <div class="desc">Building scalable, secure AI agents and agentic workflows; designing multi-agent systems that automate software-development workflows across a microservices architecture.</div>
+      <div class="timeline">
+        <div class="tl-item reveal">
+          <div class="glass tl-card">
+            <div class="role">Applied AI Engineer</div>
+            <div class="co">Vaisala · Finland</div>
+            <div class="when">2026 — Present</div>
+            <div class="desc">Building scalable, secure AI agents and agentic workflows; designing multi-agent systems that automate software-development workflows across a microservices architecture.</div>
+          </div>
         </div>
-        <div class="tl-item">
-          <div class="role">Senior Software Developer</div>
-          <div class="co">Vaisala · Finland</div>
-          <div class="when">2023 — 2026</div>
-          <div class="desc">Java 17 / Spring Boot / NestJS microservices on AWS &amp; Kubernetes for renewable-energy SaaS. Architecture, security (Keycloak), automated testing, code reviews and mentoring.</div>
+        <div class="tl-item reveal">
+          <div class="glass tl-card">
+            <div class="role">Senior Software Developer</div>
+            <div class="co">Vaisala · Finland</div>
+            <div class="when">2023 — 2026</div>
+            <div class="desc">Java 17 / Spring Boot / NestJS microservices on AWS &amp; Kubernetes for renewable-energy SaaS. Architecture, security (Keycloak), automated testing, code reviews and mentoring.</div>
+          </div>
         </div>
-        <div class="tl-item">
-          <div class="role">Senior Software Designer → Software Designer → Senior Software Engineer</div>
-          <div class="co">Landis+Gyr · Finland &amp; India</div>
-          <div class="when">2018 — 2023</div>
-          <div class="desc">Smart-metering platforms in SAFe Agile. Scrum Master, PI planning, system design, maintenance &amp; enhancements, mentoring developers.</div>
+        <div class="tl-item reveal">
+          <div class="glass tl-card">
+            <div class="role">Senior Software Designer → Software Designer → Senior Software Engineer</div>
+            <div class="co">Landis+Gyr · Finland &amp; India</div>
+            <div class="when">2018 — 2023</div>
+            <div class="desc">Smart-metering platforms in SAFe Agile. Scrum Master, PI planning, system design, maintenance &amp; enhancements, mentoring developers.</div>
+          </div>
         </div>
-        <div class="tl-item">
-          <div class="role">Senior Software Engineer → Software Engineer</div>
-          <div class="co">ARX Analytics and Advisory · India</div>
-          <div class="when">2016 — 2018</div>
-          <div class="desc">Technical architecture, security layers and end-to-end design across high- and low-level system planning and implementation.</div>
+        <div class="tl-item reveal">
+          <div class="glass tl-card">
+            <div class="role">Senior Software Engineer → Software Engineer</div>
+            <div class="co">ARX Analytics and Advisory · India</div>
+            <div class="when">2016 — 2018</div>
+            <div class="desc">Technical architecture, security layers and end-to-end design across high- and low-level system planning and implementation.</div>
+          </div>
         </div>
-        <div class="tl-item">
-          <div class="role">Java / J2EE Developer</div>
-          <div class="co">Ipseity Group · India</div>
-          <div class="when">2013 — 2016</div>
-          <div class="desc">Full SDLC delivery — analysis, design, persistence layers, UI and integration across enterprise Java applications.</div>
+        <div class="tl-item reveal">
+          <div class="glass tl-card">
+            <div class="role">Java / J2EE Developer</div>
+            <div class="co">Ipseity Group · India</div>
+            <div class="when">2013 — 2016</div>
+            <div class="desc">Full SDLC delivery — analysis, design, persistence layers, UI and integration across enterprise Java applications.</div>
+          </div>
         </div>
       </div>
     </div>
@@ -323,16 +377,16 @@
         <div class="kicker">// writing</div>
         <h2>On Medium</h2>
       </div>
-      <div class="posts reveal">
-        <a class="post" href="https://medium.com/@theRealSignet" target="_blank" rel="noopener">
+      <div class="posts">
+        <a class="glass post reveal" href="https://medium.com/@theRealSignet" target="_blank" rel="noopener">
           <h3>AI's Next Phase Won't Be Bigger Models — It Will Be Smaller, Specialized, and Tool-Centric</h3>
           <span class="arrow">→</span>
         </a>
-        <a class="post" href="https://medium.com/@theRealSignet" target="_blank" rel="noopener">
+        <a class="glass post reveal" href="https://medium.com/@theRealSignet" target="_blank" rel="noopener">
           <h3>Built a Free AI Code Review Tool for Bitbucket Server Using Just a Markdown File</h3>
           <span class="arrow">→</span>
         </a>
-        <a class="post" href="https://medium.com/@theRealSignet" target="_blank" rel="noopener">
+        <a class="glass post reveal" href="https://medium.com/@theRealSignet" target="_blank" rel="noopener">
           <h3>I Stopped Using AI as a Tool. I Started Architecting With It.</h3>
           <span class="arrow">→</span>
         </a>
@@ -340,29 +394,35 @@
     </div>
   </section>
 
-  <section class="contact" id="contact">
+  <section id="contact">
     <div class="wrap">
-      <h2 class="reveal">Let's build something intelligent.</h2>
-      <p class="reveal">Open to conversations about agentic AI, MCP, and scalable backend engineering.</p>
-      <div class="socials reveal">
-        <a class="btn btn-primary" href="mailto:ankit.katiyar91@gmail.com">✉️ Email me</a>
-        <a class="btn btn-ghost" href="https://www.linkedin.com/in/therealsignet" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="btn btn-ghost" href="https://github.com/ankitkatiyar567" target="_blank" rel="noopener">GitHub</a>
-        <a class="btn btn-ghost" href="https://medium.com/@theRealSignet" target="_blank" rel="noopener">Medium</a>
+      <div class="glass contact-panel reveal">
+        <h2>Let's build something intelligent.</h2>
+        <p>Open to conversations about agentic AI, MCP, and scalable backend engineering.</p>
+        <div class="socials">
+          <a class="btn btn-primary" href="mailto:ankit.katiyar91@gmail.com">✉️ Email me</a>
+          <a class="btn btn-glass" href="https://www.linkedin.com/in/therealsignet" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn btn-glass" href="https://github.com/ankitkatiyar567" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn btn-glass" href="https://medium.com/@theRealSignet" target="_blank" rel="noopener">Medium</a>
+        </div>
       </div>
     </div>
   </section>
 
   <footer>
-    <div class="wrap">© <span id="year"></span> Ankit Katiyar · Applied AI Engineer · Built with care 🤖</div>
+    <div class="wrap">© <span id="year"></span> Ankit Katiyar · Applied AI Engineer · Bridging AI research and real applications 🤖</div>
   </footer>
 
   <script>
+    document.documentElement.classList.add('js');
     document.getElementById('year').textContent = new Date().getFullYear();
+    const reveals = document.querySelectorAll('.reveal');
     const io = new IntersectionObserver((entries) => {
-      entries.forEach((e) => { if (e.isIntersecting) e.target.classList.add('in'); });
-    }, { threshold: 0.12 });
-    document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+      entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach((el) => io.observe(el));
+    // safety net: if anything is still hidden after 2.2s (e.g. observer never fired), reveal it
+    setTimeout(() => reveals.forEach((el) => el.classList.add('in')), 2200);
   </script>
 </body>
 </html>
